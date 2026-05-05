@@ -1,0 +1,136 @@
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 10rem 2rem 6rem;
+}
+
+.backLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-bottom: 2rem;
+  transition: color 0.3s ease;
+}
+
+.backLink:hover {
+  color: var(--primary);
+}
+
+.header {
+  margin-bottom: 3rem;
+}
+
+.iconBadge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  font-size: 2rem;
+  background: rgba(229, 40, 45, 0.1);
+  border-radius: 16px;
+  margin-bottom: 1.5rem;
+}
+
+.header h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-bottom: 3rem;
+}
+
+.description p {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+.section {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 16px;
+  padding: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.section h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sectionIcon {
+  color: var(--primary);
+  font-size: 1.2rem;
+}
+
+.highlightList {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+.highlightList li {
+  color: var(--text-muted);
+  padding-left: 1.5rem;
+  position: relative;
+  line-height: 1.6;
+}
+
+.highlightList li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.whoText {
+  color: var(--text-muted);
+  line-height: 1.8;
+}
+
+.ctaSection {
+  text-align: center;
+  margin-top: 3rem;
+  padding: 3rem;
+  background: linear-gradient(135deg, rgba(229, 40, 45, 0.08) 0%, rgba(229, 40, 45, 0.02) 100%);
+  border: 1px solid rgba(229, 40, 45, 0.2);
+  border-radius: 16px;
+}
+
+.ctaSection h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.ctaSection p {
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 8rem 1.5rem 4rem;
+  }
+  .header h1 {
+    font-size: 2.2rem;
+  }
+  .highlightList {
+    grid-template-columns: 1fr;
+  }
+  .section {
+    padding: 1.5rem;
+  }
+}

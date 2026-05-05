@@ -1,0 +1,138 @@
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 10rem 2rem 6rem;
+}
+
+.header {
+  margin-bottom: 3rem;
+}
+
+.header h1 {
+  font-size: 3rem;
+  margin-bottom: 0.75rem;
+  background: linear-gradient(135deg, var(--primary) 0%, #ff6b35 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.lastUpdated {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.section {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 16px;
+  padding: 2.5rem;
+  transition: border-color 0.3s ease;
+}
+
+.section:hover {
+  border-color: rgba(229, 40, 45, 0.3);
+}
+
+.sectionNumber {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: rgba(229, 40, 45, 0.15);
+  color: var(--primary);
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  margin-bottom: 1rem;
+}
+
+.section h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.section p {
+  color: var(--text-muted);
+  line-height: 1.8;
+  font-size: 1rem;
+}
+
+.bulletList {
+  list-style: none;
+  padding: 0;
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.bulletList li {
+  color: var(--text-muted);
+  padding-left: 1.5rem;
+  position: relative;
+  line-height: 1.7;
+}
+
+.bulletList li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 10px;
+  width: 6px;
+  height: 6px;
+  background: var(--primary);
+  border-radius: 50%;
+}
+
+.bulletList li strong {
+  color: var(--text-main);
+}
+
+.divider {
+  border: none;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border-subtle), transparent);
+  margin: 1rem 0;
+}
+
+.smsSection {
+  margin-top: 1rem;
+}
+
+.smsSection h3 {
+  font-size: 1.3rem;
+  margin-bottom: 1.25rem;
+  color: var(--primary);
+}
+
+.contactLink {
+  color: var(--primary);
+  text-decoration: underline;
+  transition: opacity 0.3s ease;
+}
+
+.contactLink:hover {
+  opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 8rem 1.5rem 4rem;
+  }
+
+  .header h1 {
+    font-size: 2rem;
+  }
+
+  .section {
+    padding: 1.5rem;
+  }
+}

@@ -1,0 +1,63 @@
+import Image from "next/image";
+import Link from "next/link";
+import styles from "./Footer.module.css";
+
+export default function Footer() {
+  return (
+    <footer className={styles.footer}>
+      <div className={styles.footerInner}>
+        {/* Brand */}
+        <div className={styles.brand}>
+          <div className={styles.brandLogo}>
+            <Image src="/logo2.png" alt="X Freight Group Inc." width={160} height={36} />
+          </div>
+          <p className={styles.brandDesc}>
+            Asset-backed Western-Canadian logistics. Full-service transportation
+            to keep your supply chain moving.
+          </p>
+        </div>
+
+        {/* Navigation */}
+        <div className={styles.column}>
+          <h4>Navigation</h4>
+          <ul>
+            <li><Link href="/">Home</Link></li>
+            <li><Link href="/services">Services</Link></li>
+            <li><Link href="/operating-entities">Operating Entities</Link></li>
+            <li><Link href="/careers">Careers</Link></li>
+          </ul>
+        </div>
+
+        {/* Services */}
+        <div className={styles.column}>
+          <h4>Services</h4>
+          <ul>
+            <li><Link href="/get-a-quote">Get a Quote</Link></li>
+            <li><Link href="/haul-with-us">Haul With Us</Link></li>
+          </ul>
+        </div>
+
+        {/* Contact */}
+        <div className={styles.column}>
+          <h4>Contact</h4>
+          <ul>
+            <li>
+              <a href="mailto:info@xfreight.ca">info@xfreight.ca</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <hr className={styles.divider} />
+
+      <div className={styles.bottomBar}>
+        <p className={styles.copyright}>
+          © {new Date().getFullYear()} X Freight Group Inc. All rights reserved.
+        </p>
+        <div className={styles.bottomLinks}>
+          <Link href="/privacy-policy">Privacy Policy</Link>
+        </div>
+      </div>
+    </footer>
+  );
+}

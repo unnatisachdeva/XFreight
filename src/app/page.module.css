@@ -49,9 +49,11 @@
 }
 
 .heroContent h1 {
-  font-size: 4.5rem;
+  font-size: clamp(2.5rem, 5vw + 1rem, 4.5rem);
+  line-height: 1.1;
   margin-bottom: 1.5rem;
   letter-spacing: -1px;
+  text-wrap: balance;
 }
 
 .highlight {
@@ -156,9 +158,6 @@
 @media (max-width: 768px) {
   .hero {
     padding: 0 2rem;
-  }
-  .heroContent h1 {
-    font-size: 3rem;
   }
   .ctaGroup {
     flex-direction: column;

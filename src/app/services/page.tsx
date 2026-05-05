@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 export default function ServicesPage() {
   return (
     <div className={styles.container}>
-      <header className={styles.header}>
+      <header className={`${styles.header} animate-fade-in`}>
         <h1>
           Our <span className={styles.headerHighlight}>Services</span>
         </h1>
@@ -22,7 +22,7 @@ export default function ServicesPage() {
         </p>
       </header>
 
-      <div className={styles.grid}>
+      <div className={`${styles.grid} animate-fade-in delay-1`}>
         {services.map((service) => (
           <Link
             key={service.slug}

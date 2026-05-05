@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 export default function CareersPage() {
   return (
     <div className={styles.container}>
-      <header className={styles.header}>
+      <header className={`${styles.header} animate-fade-in`}>
         <h1>
           Join Our <span className={styles.headerHighlight}>Team</span>
         </h1>
@@ -22,7 +22,7 @@ export default function CareersPage() {
         </p>
       </header>
 
-      <div className={styles.cultureSection}>
+      <div className={`${styles.cultureSection} animate-fade-in delay-1`}>
         <h2>Why X Freight Group?</h2>
         <p>
           At X Freight Group, we&apos;re building something special — a
@@ -34,7 +34,7 @@ export default function CareersPage() {
         </p>
       </div>
 
-      <div className={styles.grid}>
+      <div className={`${styles.grid} animate-fade-in delay-2`}>
         {roles.map((role) => (
           <Link
             key={role.slug}

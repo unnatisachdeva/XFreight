@@ -37,7 +37,7 @@ const entities = [
 export default function OperatingEntitiesPage() {
   return (
     <div className={styles.container}>
-      <header className={styles.header}>
+      <header className={`${styles.header} animate-fade-in`}>
         <h1>
           Operating{" "}
           <span className={styles.headerHighlight}>Entities</span>
@@ -49,7 +49,7 @@ export default function OperatingEntitiesPage() {
         </p>
       </header>
 
-      <div className={styles.grid}>
+      <div className={`${styles.grid} animate-fade-in delay-1`}>
         {entities.map((entity) => (
           <div key={entity.name} className={styles.card}>
             <div className={styles.cardLogo}>{entity.initial}</div>

@@ -7,6 +7,10 @@ export const metadata: Metadata = {
   title: "X Freight Group | Western Canadian Logistics",
   description:
     "Asset-backed Western-Canadian Logistics. Full-service transportation including Flatbed, Oilfield, Aggregate, Oversize/Heavy-Haul.",
+  icons: {
+    icon: "/image.png",
+    apple: "/image.png",
+  },
 };
 
 export default function RootLayout({

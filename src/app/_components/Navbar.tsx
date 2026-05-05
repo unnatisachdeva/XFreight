@@ -7,7 +7,7 @@ export default function Navbar() {
     <nav className={styles.nav}>
       <Link href="/" className={styles.logo}>
         <Image
-          src="/logo2.png"
+          src="/image.png"
           alt="X Freight Group Inc."
           width={180}
           height={40}

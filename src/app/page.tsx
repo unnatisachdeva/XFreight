@@ -14,8 +14,8 @@ export default function Home() {
         
         <div className={styles.heroContent}>
           <h1 className="animate-fade-in">
-            Asset-backed Western-Canadian <span className={styles.highlight}>Logistics.</span><br />
-            Your Freight, Handled Right.
+            <span className={styles.highlight}>Asset-Backed</span> Western-Canadian Logistics.<br />
+            <span className={styles.highlight}>Your Freight, Handled Right.</span>
           </h1>
           <p className="animate-fade-in delay-1">
             Plan. Execute. Deliver. Full-service transportation including Flatbed, Oilfield, 

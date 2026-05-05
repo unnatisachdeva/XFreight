@@ -9,8 +9,8 @@ export default function Navbar() {
         <Image
           src="/image.png"
           alt="X Freight Group Inc."
-          width={180}
-          height={40}
+          width={400}
+          height={150}
           className={styles.logoImg}
           priority
         />
@@ -18,7 +18,7 @@ export default function Navbar() {
       <div className={styles.navLinks}>
         <Link href="/">Home</Link>
         <Link href="/services">Services</Link>
-        <Link href="/operating-entities">Entities</Link>
+        <Link href="/operating-entities">Operating Entities</Link>
         <Link href="/careers">Careers</Link>
       </div>
       <Link

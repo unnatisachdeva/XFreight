@@ -9,7 +9,9 @@ export default function Footer() {
         {/* Brand */}
         <div className={styles.brand}>
           <div className={styles.brandLogo}>
-            <Image src="/image.png" alt="X Freight Group Inc." width={200} height={46} />
+            <div className={styles.logoWrapper}>
+              <Image src="/image.png" alt="X Freight Group Inc." fill style={{ objectFit: 'cover' }} />
+            </div>
           </div>
           <p className={styles.brandDesc}>
             Asset-backed Western-Canadian logistics. Full-service transportation

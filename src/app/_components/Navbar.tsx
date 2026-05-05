@@ -6,14 +6,16 @@ export default function Navbar() {
   return (
     <nav className={styles.nav}>
       <Link href="/" className={styles.logo}>
-        <Image
-          src="/image.png"
-          alt="X Freight Group Inc."
-          width={400}
-          height={150}
-          className={styles.logoImg}
-          priority
-        />
+        <div className={styles.logoWrapper}>
+          <Image
+            src="/image.png"
+            alt="X Freight Group Inc."
+            fill
+            style={{ objectFit: 'cover' }}
+            className={styles.logoImg}
+            priority
+          />
+        </div>
       </Link>
       <div className={styles.navLinks}>
         <Link href="/">Home</Link>

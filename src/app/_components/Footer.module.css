@@ -27,6 +27,16 @@
   font-size: 1.25rem;
 }
 
+.logoWrapper {
+  position: relative;
+  width: 220px;
+  height: 55px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .brandDesc {
   color: var(--text-muted);
   font-size: 0.9rem;

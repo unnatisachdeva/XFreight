@@ -14,7 +14,7 @@ export default function Home() {
         
         <div className={styles.heroContent}>
           <h1 className="animate-fade-in">
-            <span className={styles.highlight}>Asset-Backed</span> Western-Canadian Logistics.<br />
+            Asset-Backed Western-Canadian Logistics.<br />
             <span className={styles.highlight}>Your Freight, Handled Right.</span>
           </h1>
           <p className="animate-fade-in delay-1">

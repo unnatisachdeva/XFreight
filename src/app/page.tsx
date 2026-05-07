@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { services } from "./services/_data/services";
 import styles from "./page.module.css";
 
 export default function Home() {
@@ -36,19 +37,12 @@ export default function Home() {
         </div>
         
         <div className={styles.grid}>
-          {[
-            { title: "Truckload - Open Deck", desc: "Flatbed and open-deck freight across Western Canada." },
-            { title: "Oilfield", desc: "Specialized transportation for the oil and gas sector." },
-            { title: "Ice Road Transport", desc: "Seasonal freight to remote northern communities via ice roads." },
-            { title: "Aggregate", desc: "Bulk material transport: gravel, sand, rock, and construction aggregate." },
-            { title: "Heavy-Haul", desc: "Transport of oversized and overweight loads requiring permits." },
-            { title: "Freight Brokerage", desc: "Connecting shippers with vetted carriers across Canada." }
-          ].map((service, index) => (
-            <div key={index} className={styles.card}>
-              <div className={styles.cardIcon}></div>
+          {services.map((service) => (
+            <div key={service.slug} className={styles.card}>
+              <div className={styles.cardIcon}>{service.icon}</div>
               <h3>{service.title}</h3>
-              <p>{service.desc}</p>
-              <Link href="/services" className={styles.learnMore}>Learn More →</Link>
+              <p>{service.shortDesc}</p>
+              <Link href={`/services#${service.slug}`} className={styles.learnMore}>Learn More →</Link>
             </div>
           ))}
         </div>

@@ -6,6 +6,7 @@ export interface Service {
   highlights: string[];
   whoItsFor: string;
   icon: string;
+  image: string;
 }
 
 export const services: Service[] = [
@@ -29,6 +30,7 @@ export const services: Service[] = [
     whoItsFor:
       "Construction companies, steel distributors, lumber mills, and industrial manufacturers who need reliable flatbed transportation for their goods across Western Canada.",
     icon: "🚚",
+    image: "/opendeck.jpeg",
   },
   {
     slug: "oilfield",
@@ -50,6 +52,7 @@ export const services: Service[] = [
     whoItsFor:
       "Oil and gas producers, drilling companies, well servicing operations, and energy sector supply companies who need reliable, safety-compliant transportation for their equipment and materials.",
     icon: "🛢️",
+    image: "/oilfield.jpeg",
   },
   {
     slug: "ice-road-transport",
@@ -72,6 +75,7 @@ export const services: Service[] = [
     whoItsFor:
       "Mining operations, remote community suppliers, government agencies, and any organization that needs freight delivered to northern locations accessible only via seasonal ice roads.",
     icon: "❄️",
+    image: "/iceroad.jpeg",
   },
   {
     slug: "aggregate",
@@ -94,6 +98,7 @@ export const services: Service[] = [
     whoItsFor:
       "General contractors, road construction companies, concrete producers, and infrastructure developers who need reliable, high-volume aggregate transportation.",
     icon: "🏗️",
+    image: "/aggregate.jpeg",
   },
   {
     slug: "heavy-haul-overdimensional",
@@ -116,6 +121,7 @@ export const services: Service[] = [
     whoItsFor:
       "Industrial manufacturers, energy companies, construction firms, and any organization that needs to move oversized or overweight cargo safely across Western Canada.",
     icon: "⚙️",
+    image: "/heavyhaul.jpeg",
   },
   {
     slug: "freight-brokerage",
@@ -137,5 +143,6 @@ export const services: Service[] = [
     whoItsFor:
       "Shippers of all sizes who need flexible, reliable freight solutions without the overhead of managing carrier relationships directly.",
     icon: "🤝",
+    image: "/freightbrokerage.jpeg",
   },
 ];

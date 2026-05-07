@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { services } from "./_data/services";
 import styles from "./page.module.css";
@@ -45,12 +46,21 @@ export default function ServicesPage() {
               <h2>{service.title}</h2>
             </header>
 
-            <div className={styles.detailContent}>
-              <div className={styles.description}>
-                {service.description.map((para, i) => (
-                  <p key={i}>{para}</p>
-                ))}
-              </div>
+  <div className={styles.detailContent}>
+    <div className={styles.description}>
+      <div className={styles.imageWrapper}>
+        <Image 
+          src={service.image} 
+          alt={service.title} 
+          width={800} 
+          height={450} 
+          className={styles.serviceImage}
+        />
+      </div>
+      {service.description.map((para, i) => (
+        <p key={i}>{para}</p>
+      ))}
+    </div>
 
               <div className={styles.sidebar}>
                 <div className={styles.whoSection}>

@@ -147,6 +147,21 @@
   gap: 1.25rem;
 }
 
+.imageWrapper {
+  width: 100%;
+  margin-bottom: 1rem;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--border-subtle);
+}
+
+.serviceImage {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+}
+
 .description p {
   color: var(--text-muted);
   font-size: 1.1rem;

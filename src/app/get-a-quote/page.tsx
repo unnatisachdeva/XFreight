@@ -6,7 +6,7 @@ import styles from "./page.module.css";
 
 const serviceTypes = [
   "Truckload – Open Deck",
-  "Oilfield",
+  "Oil Field",
   "Ice Road Transport",
   "Aggregate",
   "Heavy-Haul / Over-Dimensional",

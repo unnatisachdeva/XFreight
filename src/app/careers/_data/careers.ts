@@ -70,7 +70,7 @@ export const roles: CareerRole[] = [
     teaser:
       "Join our fleet and deliver freight safely across Western Canada with a company that values its drivers.",
     overview: [
-      "X Freight Group is looking for experienced, safety-conscious drivers to join our growing fleet. As a Driver with our team, you'll transport freight across Western Canada — from flatbed loads to specialized oilfield and heavy-haul equipment.",
+      "X Freight Group is looking for experienced, safety-conscious drivers to join our growing fleet. As a Driver with our team, you'll transport freight across Western Canada — from flatbed loads to specialized oil field and heavy-haul equipment.",
       "We value our drivers as the backbone of our operation. You'll benefit from competitive pay, well-maintained equipment, and a company culture that prioritizes your safety, well-being, and professional development.",
     ],
     responsibilities: [

@@ -49,7 +49,7 @@ The MVP is not a marketplace or transactional platform. It is a **lead generatio
 
 ### 3.1 Shippers
 - **Who:** Businesses (SMBs and enterprise) that need freight transportation across Western Canada
-- **Need:** Reliable, asset-backed carrier with specialized capabilities (oversize, oilfield, aggregate)
+- **Need:** Reliable, asset-backed carrier with specialized capabilities (oversize, oil field, aggregate)
 - **Goal on site:** Understand services → Request a quote
 
 ### 3.2 Carriers
@@ -102,7 +102,7 @@ The MVP is not a marketplace or transactional platform. It is a **lead generatio
 | Background | Full-width truck/logistics image (high-quality, Western Canadian landscape preferred) |
 | Overlay | Dark semi-transparent overlay for text readability |
 | Main Headline | `"Asset-backed Western-Canadian Logistics. Your Freight, Handled Right."` |
-| Subheadline | `"Plan. Execute. Deliver. Full-service transportation including Flatbed, Oilfield, Aggregate, Oversize/Heavy-Haul, and Freight Brokerage to keep your supply chain moving."` |
+| Subheadline | `"Plan. Execute. Deliver. Full-service transportation including Flatbed, Oil Field, Aggregate, Oversize/Heavy-Haul, and Freight Brokerage to keep your supply chain moving."` |
 | CTA Button 1 | **"Ship With Us"** → redirects to `/get-a-quote` |
 | CTA Button 2 | **"Haul With Us"** → redirects to `/haul-with-us` |
 
@@ -135,7 +135,7 @@ Each individual service page must include:
 - Suitable for lumber, steel, machinery, and construction materials
 - Highlights: flexible scheduling, asset-backed fleet, experienced drivers
 
-**2. Oilfield (`/services/oilfield`)**
+**2. Oil Field (`/services/oilfield`)**
 - Specialized transportation for the oil and gas sector
 - Highlights: CVOR-compliant, 24/7 availability, remote location capability, specialized equipment
 

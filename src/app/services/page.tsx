@@ -6,7 +6,7 @@ import styles from "./page.module.css";
 export const metadata: Metadata = {
   title: "Services | X Freight Group",
   description:
-    "Explore our specialized transportation services: Truckload, Oilfield, Ice Road, Aggregate, Heavy-Haul, and Freight Brokerage across Western Canada.",
+    "Explore our specialized transportation services: Truckload, Oil Field, Ice Road, Aggregate, Heavy-Haul, and Freight Brokerage across Western Canada.",
 };
 
 export default function ServicesPage() {

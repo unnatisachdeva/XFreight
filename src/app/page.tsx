@@ -19,7 +19,7 @@ export default function Home() {
             <span className={styles.highlight}>Your Freight, Handled Right.</span>
           </h1>
           <p className="animate-fade-in delay-1">
-            Plan. Execute. Deliver. Full-service transportation including Flatbed, Oilfield, 
+            Plan. Execute. Deliver. Full-service transportation including Flatbed, Oil Field, 
             Aggregate, Oversize/Heavy-Haul, and Freight Brokerage to keep your supply chain moving.
           </p>
           <div className={`${styles.ctaGroup} animate-fade-in delay-2`}>

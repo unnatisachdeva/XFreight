@@ -32,18 +32,18 @@ export const services: Service[] = [
   },
   {
     slug: "oilfield",
-    title: "Oilfield",
+    title: "Oil Field",
     shortDesc: "Specialized transportation for the oil and gas sector.",
     description: [
-      "Our oilfield transportation services are purpose-built for the demanding requirements of Canada's oil and gas industry. We provide 24/7 availability for rig moves, equipment hauling, and supply chain support in both conventional and unconventional operations.",
-      "With CVOR-compliant operations and specialized equipment, we can reach remote well sites and facilities across Western Canada's energy-producing regions. Our drivers are trained in oilfield safety protocols and understand the urgency that defines this industry.",
+      "Our oil field transportation services are purpose-built for the demanding requirements of Canada's oil and gas industry. We provide 24/7 availability for rig moves, equipment hauling, and supply chain support in both conventional and unconventional operations.",
+      "With CVOR-compliant operations and specialized equipment, we can reach remote well sites and facilities across Western Canada's energy-producing regions. Our drivers are trained in oil field safety protocols and understand the urgency that defines this industry.",
       "From drilling equipment to production supplies, we deliver the critical cargo that keeps operations running — on time, every time.",
     ],
     highlights: [
       "CVOR-compliant operations",
       "24/7 availability for urgent shipments",
       "Remote location capability",
-      "Specialized oilfield equipment",
+      "Specialized oil field equipment",
       "Safety-trained drivers with H2S and first aid certifications",
       "Rig move coordination and planning",
     ],

@@ -54,7 +54,7 @@ export default function ServicesPage() {
           alt={service.title} 
           width={800} 
           height={450} 
-          className={styles.serviceImage}
+          className={`${styles.serviceImage} ${service.slug === 'freight-brokerage' ? styles.containImage : ''}`}
         />
       </div>
       {service.description.map((para, i) => (

@@ -44,7 +44,7 @@ export default function Home() {
           <div className={styles.bentoGrid}>
             {/* Bento Large 1 */}
             <Link href="/services#heavy-haul-overdimensional" className={`${styles.bentoItem} ${styles.bentoLarge}`}>
-              <Image src="/heavyhaul.jpeg" alt="Heavy Haul" fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" className={styles.bentoImg} />
+              <Image src="/s-heavyhaul.jpeg" alt="Heavy Haul" fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" className={styles.bentoImg} />
               <div className={styles.bentoOverlay}></div>
               <div className={styles.bentoContent}>
                  <h3>Heavy-Haul & Over-Dimensional</h3>
@@ -94,7 +94,7 @@ export default function Home() {
 
             {/* Bento Full 1 (Was Ice Road, now Aggregate) */}
             <Link href="/services#aggregate" className={`${styles.bentoItem} ${styles.bentoFull}`}>
-              <Image src="/s-aggregate.jpeg" alt="Aggregate" fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" className={styles.bentoImg} />
+              <Image src="/s-Aggregate.jpeg" alt="Aggregate" fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" className={styles.bentoImg} />
               <div className={styles.bentoOverlay}></div>
               <div className={styles.bentoContent}>
                  <h3>Aggregate</h3>

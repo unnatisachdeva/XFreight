@@ -98,7 +98,7 @@ export const services: Service[] = [
     whoItsFor:
       "General contractors, road construction companies, concrete producers, and infrastructure developers who need reliable, high-volume aggregate transportation.",
     icon: "🏗️",
-    image: "/s-aggregate.jpeg",
+    image: "/s-Aggregate.jpeg",
   },
   {
     slug: "heavy-haul-overdimensional",

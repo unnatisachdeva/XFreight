@@ -27,7 +27,7 @@ const entities = [
     name: "X Transport Inc.",
     desc: "X Transport Inc. is our asset-based, long-haul trucking division, specializing in cross-border and domestic Canada open-deck freight. From standard flatbed shipments to specialized and oversized loads, we move a wide range of freight with experienced drivers and well-maintained equipment. Our focus is simple—safe transport, reliable scheduling, and the ability to handle complex shipments with confidence..",
     url: "https://www.xtransport.ca",
-    image: "/logoxtransport.png",
+    image: "/logoXTransport.png",
     scale: 0.7,
   },
   {

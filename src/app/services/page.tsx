@@ -38,7 +38,7 @@ export default function ServicesPage() {
       <section className={styles.heroSection}>
         <div className={styles.heroOverlay}></div>
         <Image
-          src="/heavyhaul.jpeg"
+          src="/s-heavyhaul.jpeg"
           alt="X Freight Logistics Services"
           fill
           sizes="100vw"

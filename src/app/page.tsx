@@ -10,7 +10,7 @@ export default function Home() {
         <div className={styles.heroBg}>
           <div className={styles.overlay}></div>
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?q=80&w=2070&auto=format&fit=crop" alt="Logistics Truck" className={styles.heroImage} />
+          <img src="/mainimage.jpeg" alt="Logistics Truck" className={styles.heroImage} />
         </div>
         
         <div className={styles.heroContent}>

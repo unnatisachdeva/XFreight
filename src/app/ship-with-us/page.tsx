@@ -37,7 +37,11 @@ export default function ShipWithUsPage() {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
     const data = Object.fromEntries(formData);
-    console.log("Ship With Us form submitted:", data);
+    // Handle multiple services
+    const selectedServices = formData.getAll("service");
+    const finalData = { ...data, service: selectedServices };
+    
+    console.log("Ship With Us form submitted:", finalData);
     setSubmitted(true);
   }
 
@@ -58,11 +62,19 @@ export default function ShipWithUsPage() {
 
   return (
     <div className={styles.container}>
-      <header className={styles.header}>
-        <h1>
-          Ship with <span className={styles.headerHighlight}>X Freight</span>
-        </h1>
-      </header>
+      <div className={styles.heroBg}>
+        <div className={styles.overlay}></div>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src="/mainimage.jpeg" alt="Logistics Background" className={styles.bgImage} />
+      </div>
+
+      <div className={styles.relativeContent}>
+        <header className={`${styles.header} animate-fade-in`}>
+          <h1>
+            Ship with <span className={styles.headerHighlight}>X Freight</span>
+          </h1>
+          <p className={styles.subtitle}>Partner with Western Canada&apos;s most reliable asset-backed logistics provider.</p>
+        </header>
 
       {/* What do you need? */}
       <div className={styles.needSection}>
@@ -198,19 +210,22 @@ export default function ShipWithUsPage() {
             </select>
           </div>
 
-          {/* Select a Service */}
-          <div className={styles.field}>
-            <label htmlFor="service">Select a Service</label>
-            <select id="service" name="service" defaultValue="">
-              <option value="" disabled>
-                Select a service...
-              </option>
+          {/* Select a Service (Multiple) */}
+          <div className={`${styles.field} ${styles.fieldFull}`}>
+            <label>Select a Service (Select all that apply)</label>
+            <div className={styles.serviceCheckboxGrid}>
               {serviceOptions.map((s) => (
-                <option key={s} value={s}>
-                  {s}
-                </option>
+                <div key={s} className={styles.serviceCheckbox}>
+                  <input
+                    type="checkbox"
+                    id={`service-${s}`}
+                    name="service"
+                    value={s}
+                  />
+                  <label htmlFor={`service-${s}`}>{s}</label>
+                </div>
               ))}
-            </select>
+            </div>
           </div>
 
           {/* Comments */}
@@ -246,6 +261,7 @@ export default function ShipWithUsPage() {
           </div>
         </div>
       </form>
+      </div>
     </div>
   );
 }

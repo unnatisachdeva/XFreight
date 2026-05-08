@@ -1,131 +1,378 @@
 .container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 10rem 2rem 6rem;
+  width: 100%;
+  background: var(--bg-dark);
+  overflow-x: hidden;
 }
 
-.header {
+/* Hero Section */
+.hero {
+  height: 90vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.heroBg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.heroImg {
+  object-fit: cover;
+  object-position: center 30%;
+  opacity: 0.6;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(10, 10, 12, 0.4) 0%,
+    rgba(10, 10, 12, 0.7) 70%,
+    var(--bg-dark) 100%
+  );
+  z-index: 2;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 3;
+  max-width: 1000px;
   text-align: center;
-  margin-bottom: 5rem;
+  padding: 0 2rem;
+}
+
+.category {
+  display: inline-block;
+  color: var(--primary);
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-weight: 800;
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+  opacity: 0;
+  animation: fadeInDown 0.8s forwards;
 }
 
 .header h1 {
-  font-size: 3.5rem;
+  font-size: 5rem;
   margin-bottom: 1.5rem;
+  letter-spacing: -2px;
+  line-height: 1.1;
+  color: #fff;
 }
 
 .headerHighlight {
   color: var(--primary);
+  text-shadow: 0 0 30px rgba(229, 40, 45, 0.3);
 }
 
-.subtitle {
-  color: var(--text-muted);
-  font-size: 1.25rem;
-  max-width: 700px;
-  margin: 0 auto;
+.header p {
+  font-size: 1.5rem;
+  color: #fff;
   line-height: 1.6;
+  max-width: 750px;
+  margin: 0 auto;
+  opacity: 0.9;
 }
 
-.content {
-  background: var(--bg-card);
-  border: 1px solid var(--border-subtle);
-  border-radius: 24px;
-  padding: 4rem;
-  margin-bottom: 4rem;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+.scrollIndicator {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+}
+
+.mouse {
+  width: 24px;
+  height: 40px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 12px;
+  position: relative;
+}
+
+.mouse::before {
+  content: "";
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 8px;
+  background: var(--primary);
+  border-radius: 2px;
+  animation: mouseScroll 2s infinite;
+}
+
+/* Content Wrapper */
+.contentWrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10rem 2rem;
+}
+
+.storySection, .philosophySection {
+  position: relative;
+  overflow: hidden;
+  border-radius: 40px;
+}
+
+.sectionBg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.bgImg {
+  object-fit: cover;
+  opacity: 0.08;
+  filter: grayscale(100%);
+  mask-image: radial-gradient(circle, black 0%, transparent 80%);
+  -webkit-mask-image: radial-gradient(circle, black 0%, transparent 80%);
+}
+
+.storySection {
+  margin-bottom: 10rem;
+  text-align: center;
+  padding: 6rem 2rem;
+}
+
+.storyText {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.accentText {
+  display: block;
+  color: var(--primary);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-weight: 800;
+  font-size: 0.85rem;
+  margin-bottom: 1rem;
+}
+
+.storyText h2 {
+  font-size: 3.5rem;
+  margin-bottom: 1.5rem;
+  letter-spacing: -2px;
+  color: #fff;
+}
+
+.divider {
+  width: 60px;
+  height: 4px;
+  background: var(--primary);
+  margin: 0 auto 3rem;
 }
 
 .lead {
   font-size: 1.75rem;
-  font-family: var(--font-display);
-  font-weight: 600;
+  font-weight: 700;
+  color: #fff;
   line-height: 1.4;
-  margin-bottom: 3rem;
-  color: var(--text-main);
-  border-left: 4px solid var(--primary);
-  padding-left: 2rem;
+  margin-bottom: 2.5rem !important;
 }
 
-.grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-}
-
-.textBlock {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
-.textBlock p {
+.storyText p {
+  font-size: 1.2rem;
   color: var(--text-muted);
-  font-size: 1.1rem;
   line-height: 1.8;
 }
 
-.stats {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-}
-
-.statItem {
-  background: rgba(229, 40, 45, 0.05);
-  border: 1px solid rgba(229, 40, 45, 0.1);
-  border-radius: 20px;
-  padding: 3rem 2rem;
-  text-align: center;
+/* Aesthetic Alternating Sections */
+.aestheticSection {
+  margin-bottom: 10rem;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
-  transition: all 0.3s ease;
+  gap: 12rem;
 }
 
-.statItem:hover {
-  transform: translateY(-5px);
-  background: rgba(229, 40, 45, 0.08);
-  border-color: var(--primary);
+.aestheticRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6rem;
+  align-items: center;
 }
 
-.statNumber {
-  font-family: var(--font-display);
-  font-size: 2.5rem;
+.aestheticRow.reverse {
+  direction: rtl;
+}
+
+.aestheticRow.reverse .aestheticContent {
+  direction: ltr;
+}
+
+.aestheticImage {
+  position: relative;
+  height: 500px;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+}
+
+.sideImg {
+  object-fit: cover;
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.aestheticRow:hover .sideImg {
+  transform: scale(1.05);
+}
+
+.aestheticContent {
+  padding: 2rem;
+}
+
+.rowLabel {
+  display: block;
+  font-size: 0.85rem;
   font-weight: 800;
   color: var(--primary);
   text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 1.5rem;
+}
+
+.aestheticContent h3 {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+  color: #fff;
   letter-spacing: -1px;
 }
 
-.statLabel {
+.aestheticContent p {
+  font-size: 1.25rem;
   color: var(--text-muted);
-  font-size: 1rem;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+  line-height: 1.8;
 }
 
-@media (max-width: 992px) {
-  .grid {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-  .lead {
-    font-size: 1.5rem;
-  }
+/* Full Width Philosophy Box */
+.fullPhilosophySection {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  padding: 10rem 2rem;
+  background: #111;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-@media (max-width: 768px) {
-  .container {
-    padding: 8rem 1.5rem 4rem;
-  }
-  .header h1 {
-    font-size: 2.5rem;
-  }
-  .content {
-    padding: 2rem;
-  }
-  .stats {
-    grid-template-columns: 1fr;
-  }
+.fullPhilosophyBox {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.philosophyHeader {
+  text-align: center;
+  margin-bottom: 6rem;
+}
+
+.philosophyHeader h2 {
+  font-size: 4rem;
+  margin-bottom: 1.5rem;
+  color: #fff;
+  letter-spacing: -2px;
+}
+
+.pointsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+}
+
+.point {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 4rem 3rem;
+  border-radius: 4px;
+  transition: all 0.4s ease;
+  position: relative;
+}
+
+.point::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--primary);
+  transform: scaleX(0);
+  transition: transform 0.4s ease;
+}
+
+.point:hover {
+  background: rgba(255, 255, 255, 0.04);
+  transform: translateY(-10px);
+  border-color: var(--primary);
+}
+
+.point:hover::before {
+  transform: scaleX(1);
+}
+
+.pointTop {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.pointNum {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--primary);
+  font-family: var(--font-display);
+  opacity: 0.6;
+}
+
+.pointTop h4 {
+  font-size: 1.75rem;
+  color: #fff;
+  letter-spacing: -0.5px;
+}
+
+.point p {
+  font-size: 1.15rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+@keyframes mouseScroll {
+  0% { transform: translate(-50%, 0); opacity: 0; }
+  20% { opacity: 1; }
+  80% { transform: translate(-50%, 20px); opacity: 0; }
+  100% { opacity: 0; }
+}
+
+@keyframes fadeInDown {
+  from { transform: translateY(-20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@media (max-width: 1100px) {
+  .aestheticRow { grid-template-columns: 1fr; gap: 3rem; }
+  .aestheticRow.reverse { direction: ltr; }
+  .aestheticImage { height: 400px; }
+  .pointsGrid { grid-template-columns: 1fr; }
+  .philosophyHeader h2 { font-size: 3rem; }
 }

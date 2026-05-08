@@ -25,10 +25,11 @@ export default function Navbar() {
       
       <div className={`${styles.navLinks} ${isOpen ? styles.open : ""}`}>
         <Link href="/" onClick={() => setIsOpen(false)}>Home</Link>
-        <Link href="/about-us" onClick={() => setIsOpen(false)}>About Us</Link>
+       
         <Link href="/services" onClick={() => setIsOpen(false)}>Services</Link>
         <Link href="/operating-entities" onClick={() => setIsOpen(false)}>Operating Entities</Link>
         <Link href="/careers" onClick={() => setIsOpen(false)}>Careers</Link>
+         <Link href="/about-us" onClick={() => setIsOpen(false)}>About Us</Link>
         <Link
           href="/get-a-quote"
           className={`btn btn-primary ${styles.mobileQuote}`}

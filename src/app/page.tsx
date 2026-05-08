@@ -9,7 +9,7 @@ export default function Home() {
       {/* 1. 100vh Hero Section */}
       <section className={styles.hero}>
         <div className={styles.heroBg}>
-           <Image src="/home-hero.jpg" alt="X Freight Heavy Transport" fill sizes="100vw" className={styles.heroImage} priority />
+           <Image src="/hero3.png" alt="X Freight Heavy Transport" fill sizes="100vw" className={styles.heroImage} priority />
            <div className={styles.heroOverlay}></div>
         </div>
         
@@ -47,7 +47,6 @@ export default function Home() {
               <Image src="/heavyhaul.jpeg" alt="Heavy Haul" fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" className={styles.bentoImg} />
               <div className={styles.bentoOverlay}></div>
               <div className={styles.bentoContent}>
-                 <Settings size={32} className={styles.bentoIcon} />
                  <h3>Heavy-Haul & Over-Dimensional</h3>
                  <p>Moving the loads others can&apos;t. Full permit acquisition and pilot car coordination.</p>
               </div>
@@ -55,10 +54,9 @@ export default function Home() {
             
             {/* Bento Normal 1 */}
             <Link href="/services#truckload-open-deck" className={styles.bentoItem}>
-              <Image src="/opendeck.jpeg" alt="Open Deck" fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" className={styles.bentoImg} />
+              <Image src="/s-opendeck.jpeg" alt="Open Deck" fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" className={styles.bentoImg} />
               <div className={styles.bentoOverlay}></div>
               <div className={styles.bentoContent}>
-                 <Truck size={28} className={styles.bentoIcon} />
                  <h3>Truckload – Open Deck</h3>
                  <p>Flatbed transport for lumber, steel, and machinery.</p>
               </div>
@@ -66,51 +64,47 @@ export default function Home() {
 
             {/* Bento Normal 2 */}
             <Link href="/services#oilfield" className={styles.bentoItem}>
-              <Image src="/oilfield.jpeg" alt="Oilfield" fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" className={styles.bentoImg} />
+              <Image src="/s-oilfield.jpeg" alt="Oilfield" fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" className={styles.bentoImg} />
               <div className={styles.bentoOverlay}></div>
               <div className={styles.bentoContent}>
-                 <Flame size={28} className={styles.bentoIcon} />
                  <h3>Oil Field</h3>
                  <p>Rig moves and urgent supply chain support.</p>
               </div>
             </Link>
 
-            {/* Bento Normal 3 */}
-            <Link href="/services#aggregate" className={styles.bentoItem}>
-              <Image src="/aggregate.jpeg" alt="Aggregate" fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" className={styles.bentoImg} />
+            {/* Bento Normal 3 (Was Aggregate, now Ice Road) */}
+            <Link href="/services#ice-road-transport" className={styles.bentoItem}>
+              <Image src="/s-iceroads.jpeg" alt="Ice Road" fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" className={styles.bentoImg} />
               <div className={styles.bentoOverlay}></div>
               <div className={styles.bentoContent}>
-                 <Mountain size={28} className={styles.bentoIcon} />
-                 <h3>Aggregate</h3>
-                 <p>High-volume bulk material hauling.</p>
+                 <h3>Ice Road Transport</h3>
+                 <p>Delivering critical supplies to remote northern communities via seasonal winter roads.</p>
               </div>
             </Link>
 
             {/* Bento Normal 4 */}
             <Link href="/services#freight-brokerage" className={styles.bentoItem}>
-              <Image src="/freightbrokerage.jpeg" alt="Freight Brokerage" fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" className={styles.bentoImg} />
+              <Image src="/s-freightbrokerage.jpeg" alt="Freight Brokerage" fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" className={styles.bentoImg} />
               <div className={styles.bentoOverlay}></div>
               <div className={styles.bentoContent}>
-                 <Handshake size={28} className={styles.bentoIcon} />
                  <h3>Freight Brokerage</h3>
                  <p>Connecting shippers with our vetted network across Canada.</p>
               </div>
             </Link>
 
-            {/* Bento Full 1 */}
-            <Link href="/services#ice-road-transport" className={`${styles.bentoItem} ${styles.bentoFull}`}>
-              <Image src="/iceroad.jpeg" alt="Ice Road" fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" className={styles.bentoImg} />
+            {/* Bento Full 1 (Was Ice Road, now Aggregate) */}
+            <Link href="/services#aggregate" className={`${styles.bentoItem} ${styles.bentoFull}`}>
+              <Image src="/s-aggregate.jpeg" alt="Aggregate" fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" className={styles.bentoImg} />
               <div className={styles.bentoOverlay}></div>
               <div className={styles.bentoContent}>
-                 <Snowflake size={32} className={styles.bentoIcon} />
-                 <h3>Ice Road Transport</h3>
-                 <p>Delivering critical supplies to remote northern communities via seasonal winter roads.</p>
+                 <h3>Aggregate</h3>
+                 <p>High-volume bulk material hauling.</p>
               </div>
             </Link>
           </div>
         </div>
       </section>
-            {/* 3. Qualitative Trust Bar */}
+            {/* 3. Qualitative Trust Bar
       <section className={styles.trustBar}>
         <div className={styles.trustItem}>
           <ShieldCheck className={styles.trustIcon} />
@@ -135,11 +129,11 @@ export default function Home() {
             <p>Always on, always tracking</p>
           </div>
         </div>
-      </section>
+      </section> */}
       
       {/* 4. Massive Cinematic CTA Footer */}
       <section className={styles.ctaSection}>
-        <Image src="/cta-bg.jpg" alt="X Freight" fill sizes="100vw" className={styles.ctaBgImage} />
+        <Image src="/readytomove4.png" alt="X Freight" fill sizes="100vw" className={styles.ctaBgImage} />
         <div className={styles.ctaOverlay}></div>
         <div className={styles.ctaContent}>
           <div className={styles.ctaBadge}>Get Started</div>
@@ -149,7 +143,7 @@ export default function Home() {
             <Link href="/get-a-quote" className={styles.primaryBtn}>Request a Quote</Link>
             <div className={styles.ctaContactWrapper}>
               <span className={styles.ctaOr}>or call dispatch 24/7</span>
-              <a href="tel:18005550199" className={styles.ctaPhone}>1-800-555-0199</a>
+              <a href="tel: 7806055557" className={styles.ctaPhone}> 780-605-5557</a>
             </div>
           </div>
         </div>

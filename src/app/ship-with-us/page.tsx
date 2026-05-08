@@ -44,7 +44,12 @@ export default function ShipWithUsPage() {
 
     const formData = new FormData(e.currentTarget);
     const data = Object.fromEntries(formData);
-    const finalData = { ...data, formType: "Ship With Us" };
+    const selectedServices = formData.getAll("services");
+    const finalData = { 
+      ...data, 
+      services: selectedServices,
+      formType: "Ship With Us" 
+    };
     
     try {
       const response = await fetch("/api/submit", {
@@ -192,14 +197,17 @@ export default function ShipWithUsPage() {
                   </div>
 
                   {/* Select a Service */}
-                  <div className={styles.field}>
-                    <label htmlFor="service">Select a Service</label>
-                    <select id="service" name="service" defaultValue="">
-                      <option value="" disabled>Select a service...</option>
-                      {serviceOptions.map((s) => (
-                        <option key={s} value={s}>{s}</option>
+                  <div className={`${styles.field} ${styles.fieldFull}`}>
+                    <label>Select Services</label>
+                    <div className={styles.checkboxGroup}>
+                      {serviceOptions.map((service) => (
+                        <label key={service} className={styles.checkboxLabel}>
+                          <input type="checkbox" name="services" value={service} />
+                          <span className={styles.customCheck}></span>
+                          {service}
+                        </label>
                       ))}
-                    </select>
+                    </div>
                   </div>
 
                   {/* Comments */}

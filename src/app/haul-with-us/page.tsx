@@ -22,6 +22,7 @@ const regions = [
   "Saskatchewan",
   "Manitoba",
   "Ontario",
+  "Maritime Provinces",
   "Northern Territories",
   "US Cross-Border",
 ];
@@ -39,9 +40,11 @@ export default function HaulWithUsPage() {
     const formData = new FormData(e.currentTarget);
     const data = Object.fromEntries(formData);
     const selectedRegions = formData.getAll("regions");
+    const selectedEquipment = formData.getAll("equipmentTypes");
     const finalData = { 
       ...data, 
       regions: selectedRegions,
+      equipmentTypes: selectedEquipment,
       formType: "Carrier Application" 
     };
 
@@ -141,14 +144,17 @@ export default function HaulWithUsPage() {
                   </div>
 
                   {/* Equipment Type */}
-                  <div className={styles.field}>
-                    <label htmlFor="equipmentType">Equipment Type<span className={styles.required}>*</span></label>
-                    <select id="equipmentType" name="equipmentType" required defaultValue="">
-                      <option value="" disabled>Select equipment type...</option>
+                  <div className={`${styles.field} ${styles.fieldFull}`}>
+                    <label>Equipment Type<span className={styles.required}>*</span></label>
+                    <div className={styles.checkboxGroup}>
                       {equipmentTypes.map((type) => (
-                        <option key={type} value={type}>{type}</option>
+                        <label key={type} className={styles.checkboxLabel}>
+                          <input type="checkbox" name="equipmentTypes" value={type} />
+                          <span className={styles.customCheck}></span>
+                          {type}
+                        </label>
                       ))}
-                    </select>
+                    </div>
                   </div>
 
                   {/* Number of Units */}

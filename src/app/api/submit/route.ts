@@ -44,10 +44,16 @@ export async function POST(request: Request) {
       html: companyHtml,
     });
 
+    const origin = new URL(request.url).origin;
+    const logoUrl = `${origin}/image.png`;
+
     // 2. Send confirmation to the User
     const userSubject = "We've received your request - X Freight Group";
     const userHtml = `
-      <div style="font-family: sans-serif; padding: 20px; border: 1px solid #eee; border-radius: 10px;">
+      <div style="font-family: sans-serif; padding: 20px; border: 1px solid #eee; border-radius: 10px; max-width: 600px; margin: 0 auto; background-color: #fff;">
+        <div style="text-align: center; margin-bottom: 30px; padding-bottom: 20px; border-bottom: 1px solid #eee;">
+          <img src="${logoUrl}" alt="X Freight Group Logo" style="max-height: 80px; width: auto;" />
+        </div>
         <h2 style="color: #e5282d;">Thank You for Reaching Out</h2>
         <p>Dear ${formData.firstName || "Customer"},</p>
         <p>We have received your ${formType} submission and our team is currently reviewing it.</p>

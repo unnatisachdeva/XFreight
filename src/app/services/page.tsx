@@ -115,21 +115,12 @@ export default function ServicesPage() {
                     <p>{service.whoItsFor}</p>
                   </div>
 
-                  <div className={styles.highlightsBlock}>
-                    <h4>Key Capabilities</h4>
-                    <ul className={styles.highlightList}>
-                      {service.highlights.map((highlight, i) => (
-                        <li key={i}>{highlight}</li>
-                      ))}
-                    </ul>
+                  <div className={styles.actionBlock} style={{ marginTop: '2rem' }}>
+                    <Link href="/get-a-quote" className={styles.quoteBtn}>
+                      Request a Quote <span className={styles.arrow}>→</span>
+                    </Link>
                   </div>
                 </div>
-              </div>
-
-              <div className={styles.actionRow}>
-                <Link href="/get-a-quote" className={styles.quoteBtn}>
-                  Request a Quote <span className={styles.arrow}>→</span>
-                </Link>
               </div>
             </article>
           ))}

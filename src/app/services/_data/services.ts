@@ -13,7 +13,7 @@ export const services: Service[] = [
   {
     slug: "truckload-open-deck",
     title: "Truckload – Open Deck",
-    shortDesc: "Flatbed and open-deck freight across Western Canada.",
+    shortDesc: "Flatbed and open-deck freight across Canada and US.",
     description: [
       "Our truckload and open-deck services provide reliable flatbed transportation across Western Canada. Whether you're moving lumber, steel, machinery, or construction materials, our asset-backed fleet is equipped to handle your freight with precision and care.",
       "With flexible scheduling and experienced drivers, we ensure your open-deck shipments arrive on time and in perfect condition. Our extensive network covers major industrial corridors throughout British Columbia, Alberta, Saskatchewan, and Manitoba.",
@@ -30,7 +30,7 @@ export const services: Service[] = [
     whoItsFor:
       "Construction companies, steel distributors, lumber mills, and industrial manufacturers who need reliable flatbed transportation for their goods across Western Canada.",
     icon: "🚚",
-    image: "/opendeck.jpeg",
+    image: "/s-opendeck.jpeg",
   },
   {
     slug: "oilfield",
@@ -52,7 +52,7 @@ export const services: Service[] = [
     whoItsFor:
       "Oil and gas producers, drilling companies, well servicing operations, and energy sector supply companies who need reliable, safety-compliant transportation for their equipment and materials.",
     icon: "🛢️",
-    image: "/oilfield.jpeg",
+    image: "/s-oilfield.jpeg",
   },
   {
     slug: "ice-road-transport",
@@ -75,7 +75,7 @@ export const services: Service[] = [
     whoItsFor:
       "Mining operations, remote community suppliers, government agencies, and any organization that needs freight delivered to northern locations accessible only via seasonal ice roads.",
     icon: "❄️",
-    image: "/iceroad.jpeg",
+    image: "/s-iceroads.jpeg",
   },
   {
     slug: "aggregate",
@@ -98,7 +98,7 @@ export const services: Service[] = [
     whoItsFor:
       "General contractors, road construction companies, concrete producers, and infrastructure developers who need reliable, high-volume aggregate transportation.",
     icon: "🏗️",
-    image: "/aggregate.jpeg",
+    image: "/s-aggregate.jpeg",
   },
   {
     slug: "heavy-haul-overdimensional",
@@ -121,7 +121,7 @@ export const services: Service[] = [
     whoItsFor:
       "Industrial manufacturers, energy companies, construction firms, and any organization that needs to move oversized or overweight cargo safely across Western Canada.",
     icon: "⚙️",
-    image: "/heavyhaul.jpeg",
+    image: "/s-heavyhaul.jpeg",
   },
   {
     slug: "freight-brokerage",
@@ -143,6 +143,6 @@ export const services: Service[] = [
     whoItsFor:
       "Shippers of all sizes who need flexible, reliable freight solutions without the overhead of managing carrier relationships directly.",
     icon: "🤝",
-    image: "/freightbrokerage.jpeg",
+    image: "/s-freightbrokerage.jpeg",
   },
 ];

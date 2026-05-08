@@ -14,43 +14,23 @@ export default function CareersPage() {
   return (
     <div className={styles.container}>
       {/* Hero Section */}
-      <section className={styles.hero}>
-        <div className={styles.heroBg}>
-          <div className={styles.overlay}></div>
-          <Image 
-            src="/careers-hero.png" 
-            alt="X Freight Team" 
-            fill 
-            className={styles.heroImg}
-            priority
-          />
-        </div>
+      <section className={styles.heroSection}>
+        <div className={styles.heroOverlay}></div>
+        <Image
+          src="/careers-hero.png"
+          alt="X Freight Team"
+          fill
+          sizes="100vw"
+          className={styles.heroBg}
+          priority
+        />
         <div className={styles.heroContent}>
-          <header className={`${styles.header} animate-fade-in`}>
-            <span className={styles.category}>Join the Journey</span>
-            <h1>
-              Build Your Career at <span className={styles.headerHighlight}>X Freight</span>
-            </h1>
-            <p>
-              We&apos;re more than just logistics. We&apos;re a team of dedicated professionals moving Western Canada forward.
-            </p>
-          </header>
-        </div>
-        <div className={styles.scrollIndicator}>
-          <div className={styles.mouse}></div>
-        </div>
-      </section>
-
-      {/* Culture Section */}
-      <section className={`${styles.cultureSection} animate-fade-in`}>
-        <div className={styles.cultureInner}>
-          <div className={styles.cultureText}>
-            <h2>Why Work with Us?</h2>
-            <div className={styles.divider}></div>
-            <p>
-              At X Freight Group, our success is built on the strength of our people. We offer a dynamic work environment rooted in safety, integrity, and mutual respect. From competitive benefits to professional growth opportunities, we provide the platform you need to excel.
-            </p>
-          </div>
+          <h1 className={`${styles.title} animate-fade-in`}>
+            Join Our <span className={styles.textPrimary}>Team</span>
+          </h1>
+          <p className={`${styles.subtitle} animate-fade-in delay-1`}>
+            We&apos;re more than just logistics. We&apos;re a team of dedicated professionals moving Western Canada forward.
+          </p>
         </div>
       </section>
 

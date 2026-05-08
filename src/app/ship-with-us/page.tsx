@@ -1,6 +1,8 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
 import styles from "./page.module.css";
 
 const needOptions = [
@@ -41,211 +43,165 @@ export default function ShipWithUsPage() {
     setSubmitted(true);
   }
 
-  if (submitted) {
-    return (
-      <div className={styles.container}>
-        <div className={styles.success}>
-          <div className={styles.successIcon}>✅</div>
-          <h2>Thank you!</h2>
-          <p>
-            We&apos;ve received your request and a member of our team will be in
-            touch shortly.
-          </p>
-        </div>
-      </div>
-    );
-  }
-
   return (
-    <div className={styles.container}>
-      <header className={styles.header}>
-        <h1>
-          Ship with <span className={styles.headerHighlight}>X Freight</span>
-        </h1>
-      </header>
-
-      {/* What do you need? */}
-      <div className={styles.needSection}>
-        <h2>What do you need?</h2>
-        <div className={styles.needOptions}>
-          {needOptions.map((option) => (
-            <div key={option} className={styles.needOption}>
-              <input
-                type="radio"
-                id={`need-${option}`}
-                name="need"
-                value={option}
-                checked={selectedNeed === option}
-                onChange={() => setSelectedNeed(option)}
-                required
-              />
-              <label
-                htmlFor={`need-${option}`}
-                className={styles.needOptionLabel}
-              >
-                {option}
-              </label>
-            </div>
-          ))}
+    <div className={styles.splitLayout}>
+      {/* Left Side - Image */}
+      <div className={styles.imagePanel}>
+        <Image
+          src="/freightbrokerage.jpeg"
+          alt="X Freight Logistics Services"
+          fill
+          sizes="(max-width: 768px) 100vw, 50vw"
+          className={styles.sideImage}
+          priority
+        />
+        <div className={styles.imageOverlay}>
+          <div className={styles.overlayContent}>
+            <h1>Ship with X Freight</h1>
+            <div className={styles.accentLine}></div>
+            <p>Whether you need a quick quote or a long-term logistics partnership, we have the capacity and expertise to deliver.</p>
+          </div>
         </div>
       </div>
 
-      {/* Form */}
-      <form onSubmit={handleSubmit} className={styles.form}>
-        <p className={styles.formTitle}>
-          Provide your details so we can contact you
-        </p>
+      {/* Right Side - Form */}
+      <div className={styles.formPanel}>
+        <div className={styles.formContent}>
+          {submitted ? (
+            <div className={`${styles.successBox} animate-fade-in`}>
+              <div className={styles.successIcon}>✅</div>
+              <h2 className={styles.successTitle}>Thank You!</h2>
+              <p className={styles.successText}>
+                We&apos;ve received your request and a member of our team will be in touch shortly.
+              </p>
+              <button onClick={() => setSubmitted(false)} className={styles.resetBtn}>
+                Submit Another Request
+              </button>
+            </div>
+          ) : (
+            <div className="animate-fade-in">
+              <div className={styles.formHeader}>
+                <h2 className={styles.formTitle}>
+                  Let&apos;s <span className={styles.textPrimary}>Connect</span>
+                </h2>
+                <p className={styles.formSubtitle}>
+                  Provide your details below and our team will get back to you.
+                </p>
+              </div>
 
-        <div className={styles.formGrid}>
-          {/* First Name */}
-          <div className={styles.field}>
-            <label htmlFor="firstName">
-              First name<span className={styles.required}>*</span>
-            </label>
-            <input
-              type="text"
-              id="firstName"
-              name="firstName"
-              required
-              placeholder="John"
-            />
-          </div>
+              <form onSubmit={handleSubmit} className={styles.form}>
+                
+                {/* What do you need? */}
+                <div className={styles.needSection}>
+                  <h3 className={styles.sectionHeading}>What do you need?</h3>
+                  <div className={styles.needOptions}>
+                    {needOptions.map((option) => (
+                      <div key={option} className={styles.needOption}>
+                        <input
+                          type="radio"
+                          id={`need-${option}`}
+                          name="need"
+                          value={option}
+                          checked={selectedNeed === option}
+                          onChange={() => setSelectedNeed(option)}
+                          required
+                        />
+                        <label htmlFor={`need-${option}`} className={styles.needOptionLabel}>
+                          {option}
+                        </label>
+                      </div>
+                    ))}
+                  </div>
+                </div>
 
-          {/* Last Name */}
-          <div className={styles.field}>
-            <label htmlFor="lastName">
-              Last name<span className={styles.required}>*</span>
-            </label>
-            <input
-              type="text"
-              id="lastName"
-              name="lastName"
-              required
-              placeholder="Smith"
-            />
-          </div>
+                <div className={styles.divider}></div>
 
-          {/* Email */}
-          <div className={styles.field}>
-            <label htmlFor="email">
-              Enter Email<span className={styles.required}>*</span>
-            </label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              required
-              placeholder="john@company.com"
-            />
-          </div>
+                <div className={styles.formGrid}>
+                  {/* First Name */}
+                  <div className={styles.field}>
+                    <label htmlFor="firstName">First name<span className={styles.required}>*</span></label>
+                    <input type="text" id="firstName" name="firstName" required placeholder="John" />
+                  </div>
 
-          {/* Phone */}
-          <div className={styles.field}>
-            <label htmlFor="phone">
-              Phone number<span className={styles.required}>*</span>
-            </label>
-            <input
-              type="tel"
-              id="phone"
-              name="phone"
-              required
-              placeholder="(403) 555-0123"
-            />
-          </div>
+                  {/* Last Name */}
+                  <div className={styles.field}>
+                    <label htmlFor="lastName">Last name<span className={styles.required}>*</span></label>
+                    <input type="text" id="lastName" name="lastName" required placeholder="Smith" />
+                  </div>
 
-          {/* Company Name */}
-          <div className={styles.field}>
-            <label htmlFor="companyName">
-              Company name<span className={styles.required}>*</span>
-            </label>
-            <input
-              type="text"
-              id="companyName"
-              name="companyName"
-              required
-              placeholder="Acme Industries"
-            />
-          </div>
+                  {/* Email */}
+                  <div className={styles.field}>
+                    <label htmlFor="email">Email Address<span className={styles.required}>*</span></label>
+                    <input type="email" id="email" name="email" required placeholder="john@company.com" />
+                  </div>
 
-          {/* Website URL */}
-          <div className={styles.field}>
-            <label htmlFor="website">
-              Website URL<span className={styles.required}>*</span>
-            </label>
-            <input
-              type="url"
-              id="website"
-              name="website"
-              required
-              placeholder="https://yourcompany.com"
-            />
-          </div>
+                  {/* Phone */}
+                  <div className={styles.field}>
+                    <label htmlFor="phone">Phone number<span className={styles.required}>*</span></label>
+                    <input type="tel" id="phone" name="phone" required placeholder="(403) 555-0123" />
+                  </div>
 
-          {/* Average Monthly Volume */}
-          <div className={styles.field}>
-            <label htmlFor="volume">
-              Average Monthly Volume<span className={styles.required}>*</span>
-            </label>
-            <select id="volume" name="volume" required defaultValue="">
-              <option value="" disabled>
-                Please Select
-              </option>
-              {volumeOptions.map((v) => (
-                <option key={v} value={v}>
-                  {v}
-                </option>
-              ))}
-            </select>
-          </div>
+                  {/* Company Name */}
+                  <div className={styles.field}>
+                    <label htmlFor="companyName">Company name<span className={styles.required}>*</span></label>
+                    <input type="text" id="companyName" name="companyName" required placeholder="Acme Industries" />
+                  </div>
 
-          {/* Select a Service */}
-          <div className={styles.field}>
-            <label htmlFor="service">Select a Service</label>
-            <select id="service" name="service" defaultValue="">
-              <option value="" disabled>
-                Select a service...
-              </option>
-              {serviceOptions.map((s) => (
-                <option key={s} value={s}>
-                  {s}
-                </option>
-              ))}
-            </select>
-          </div>
+                  {/* Website URL */}
+                  <div className={styles.field}>
+                    <label htmlFor="website">Website URL<span className={styles.required}>*</span></label>
+                    <input type="url" id="website" name="website" required placeholder="https://yourcompany.com" />
+                  </div>
 
-          {/* Comments */}
-          <div className={`${styles.field} ${styles.fieldFull}`}>
-            <label htmlFor="comments">Comments</label>
-            <textarea
-              id="comments"
-              name="comments"
-              placeholder="Tell us more about your shipping needs..."
-              rows={4}
-            />
-          </div>
+                  {/* Average Monthly Volume */}
+                  <div className={styles.field}>
+                    <label htmlFor="volume">Average Monthly Volume<span className={styles.required}>*</span></label>
+                    <select id="volume" name="volume" required defaultValue="">
+                      <option value="" disabled>Please Select</option>
+                      {volumeOptions.map((v) => (
+                        <option key={v} value={v}>{v}</option>
+                      ))}
+                    </select>
+                  </div>
 
-          {/* Marketing Consent */}
-          <div className={styles.consentField}>
-            <input type="checkbox" id="consent" name="consent" required />
-            <label htmlFor="consent">
-              By checking this box, I agree to receive marketing emails from X
-              Freight about their latest products, services, and offers. I
-              understand that I can unsubscribe at any time by following the
-              instructions in the emails.
-            </label>
-          </div>
+                  {/* Select a Service */}
+                  <div className={styles.field}>
+                    <label htmlFor="service">Select a Service</label>
+                    <select id="service" name="service" defaultValue="">
+                      <option value="" disabled>Select a service...</option>
+                      {serviceOptions.map((s) => (
+                        <option key={s} value={s}>{s}</option>
+                      ))}
+                    </select>
+                  </div>
 
-          {/* Submit */}
-          <div className={styles.submitRow}>
-            <button
-              type="submit"
-              className={`btn btn-primary ${styles.submitBtn}`}
-            >
-              Submit
-            </button>
-          </div>
+                  {/* Comments */}
+                  <div className={`${styles.field} ${styles.fieldFull}`}>
+                    <label htmlFor="comments">Comments</label>
+                    <textarea id="comments" name="comments" placeholder="Tell us more about your shipping needs..." rows={4} />
+                  </div>
+
+                  {/* Marketing Consent */}
+                  <div className={styles.consentField}>
+                    <input type="checkbox" id="consent" name="consent" required />
+                    <label htmlFor="consent">
+                      By checking this box, I agree to receive marketing emails from X
+                      Freight. I understand that I can unsubscribe at any time.
+                    </label>
+                  </div>
+
+                  {/* Submit */}
+                  <div className={styles.submitRow}>
+                    <button type="submit" className={styles.submitBtn}>
+                      Submit Request <span className={styles.arrow}>→</span>
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          )}
         </div>
-      </form>
+      </div>
     </div>
   );
 }

@@ -16,19 +16,21 @@ export default function Navbar() {
             src="/image.png"
             alt="X Freight Group Inc."
             fill
+            sizes="(max-width: 768px) 100vw, 33vw"
             style={{ objectFit: 'cover' }}
             className={styles.logoImg}
             priority
           />
         </div>
       </Link>
-      
+
       <div className={`${styles.navLinks} ${isOpen ? styles.open : ""}`}>
         <Link href="/" onClick={() => setIsOpen(false)}>Home</Link>
-        <Link href="/about-us" onClick={() => setIsOpen(false)}>About Us</Link>
+
         <Link href="/services" onClick={() => setIsOpen(false)}>Services</Link>
         <Link href="/operating-entities" onClick={() => setIsOpen(false)}>Operating Entities</Link>
         <Link href="/careers" onClick={() => setIsOpen(false)}>Careers</Link>
+        <Link href="/about-us" onClick={() => setIsOpen(false)}>About Us</Link>
         <Link
           href="/get-a-quote"
           className={`btn btn-primary ${styles.mobileQuote}`}
@@ -46,8 +48,8 @@ export default function Navbar() {
         >
           Get a Quote
         </Link>
-        
-        <button 
+
+        <button
           className={`${styles.hamburger} ${isOpen ? styles.open : ""}`}
           onClick={() => setIsOpen(!isOpen)}
           aria-label="Toggle menu"

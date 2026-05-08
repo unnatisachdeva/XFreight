@@ -1,36 +1,103 @@
-.container {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 10rem 2rem 6rem;
+/* Split Layout Container */
+.splitLayout {
+  display: flex;
+  width: 100%;
+  background-color: #050505;
+  color: #fff;
+  align-items: flex-start;
 }
 
-.header {
-  text-align: center;
-  margin-bottom: 3rem;
-}
-
-.header h1 {
-  font-size: 3rem;
-  margin-bottom: 0.75rem;
-}
-
-.headerHighlight {
+.textPrimary {
   color: var(--primary);
 }
 
-.header p {
-  color: var(--text-muted);
+/* Left Image Panel */
+.imagePanel {
+  flex: 1;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  /* Intentionally removed border-right so it blends */
+}
+
+.sideImage {
+  object-fit: cover;
+  z-index: 1;
+}
+
+.imageOverlay {
+  position: absolute;
+  inset: 0;
+  /* Added a horizontal edge blur so the image softly fades into the right panel instead of a hard line */
+  background: linear-gradient(to top, #050505 0%, rgba(5,5,5,0.4) 50%, rgba(5,5,5,0.1) 100%);
+  box-shadow: inset -50px 0 50px -50px #050505;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 4rem;
+}
+
+.overlayContent {
+  max-width: 500px;
+}
+
+.overlayContent h1 {
+  font-family: var(--font-display);
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  line-height: 1.1;
+  letter-spacing: -1px;
+}
+
+.accentLine {
+  width: 60px;
+  height: 4px;
+  background-color: var(--primary);
+  margin-bottom: 1.5rem;
+}
+
+.overlayContent p {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  color: #ddd;
+  font-weight: 300;
+}
+
+/* Right Form Panel */
+.formPanel {
+  flex: 1.2;
+  background-color: #050505;
+  padding: 6rem 4rem;
+}
+
+.formContent {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.formHeader {
+  margin-bottom: 3rem;
+}
+
+.formTitle {
+  font-family: var(--font-display);
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  letter-spacing: -1px;
+}
+
+.formSubtitle {
+  color: #888;
   font-size: 1.1rem;
-  line-height: 1.7;
 }
 
-.form {
-  background: var(--bg-card);
-  border: 1px solid var(--border-subtle);
-  border-radius: 16px;
-  padding: 3rem;
-}
-
+/* Form Styles */
 .formGrid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -48,85 +115,119 @@
 }
 
 .field label {
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   font-weight: 600;
-  color: var(--text-main);
+  color: #bbb;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .required {
   color: var(--primary);
-  margin-left: 2px;
+  margin-left: 4px;
 }
 
 .field input,
 .field select,
 .field textarea {
-  background: var(--bg-dark);
-  border: 1px solid var(--border-subtle);
-  border-radius: 8px;
-  padding: 12px 16px;
-  color: var(--text-main);
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+  padding: 14px 16px;
+  color: #fff;
   font-family: var(--font-sans);
-  font-size: 0.95rem;
-  transition: border-color 0.3s ease;
+  font-size: 1rem;
+  transition: all 0.3s ease;
   outline: none;
 }
 
 .field input:focus,
 .field select:focus,
 .field textarea:focus {
-  border-color: var(--primary);
+  background: rgba(229, 40, 45, 0.05);
+  border-color: rgba(255, 255, 255, 0.1);
+  border-bottom-color: var(--primary);
 }
 
 .field input::placeholder,
 .field textarea::placeholder {
-  color: #555;
+  color: #444;
+}
+
+/* Fix browser auto-fill styles in dark mode */
+.field input:-webkit-autofill,
+.field input:-webkit-autofill:hover, 
+.field input:-webkit-autofill:focus, 
+.field input:-webkit-autofill:active{
+    -webkit-box-shadow: 0 0 0 30px #0a0a0a inset !important;
+    -webkit-text-fill-color: white !important;
+    transition: background-color 5000s ease-in-out 0s;
 }
 
 .field select {
   cursor: pointer;
   appearance: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23a1a1aa' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23E5282D' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
-  background-position: right 14px center;
+  background-position: right 16px center;
   padding-right: 36px;
 }
 
 .field select option {
-  background: var(--bg-dark);
-  color: var(--text-main);
+  background: #111;
+  color: #fff;
 }
 
 .field textarea {
   resize: vertical;
-  min-height: 100px;
+}
+
+/* Custom scrollbar for textarea */
+.field textarea::-webkit-scrollbar {
+  width: 6px;
+}
+.field textarea::-webkit-scrollbar-track {
+  background: #111;
+}
+.field textarea::-webkit-scrollbar-thumb {
+  background: #444;
+  border-radius: 4px;
+}
+
+/* Date input icon white */
+.field input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+    opacity: 0.3;
+    cursor: pointer;
+}
+.field input[type="date"]::-webkit-calendar-picker-indicator:hover {
+    opacity: 1;
 }
 
 .consentField {
   grid-column: 1 / -1;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 12px;
-  margin-top: 0.5rem;
+  margin-top: 1rem;
+  padding: 1rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .consentField input[type="checkbox"] {
-  width: 20px;
-  height: 20px;
-  margin-top: 2px;
+  width: 18px;
+  height: 18px;
   accent-color: var(--primary);
   cursor: pointer;
-  flex-shrink: 0;
 }
 
 .consentField label {
   font-size: 0.9rem;
-  color: var(--text-muted);
-  line-height: 1.6;
+  color: #aaa;
   cursor: pointer;
 }
 
-.consentField a {
+.privacyLink {
   color: var(--primary);
   text-decoration: underline;
 }
@@ -138,47 +239,110 @@
 
 .submitBtn {
   width: 100%;
-  padding: 16px;
-  font-size: 1.05rem;
+  padding: 1.25rem;
+  font-size: 1.1rem;
+  font-family: var(--font-display);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  background-color: var(--primary);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.success {
+.submitBtn:hover {
+  background-color: #c01a1e;
+  box-shadow: 0 10px 20px rgba(229, 40, 45, 0.3);
+}
+
+.arrow {
+  margin-left: 10px;
+  transition: transform 0.3s ease;
+}
+
+.submitBtn:hover .arrow {
+  transform: translateX(8px);
+}
+
+/* Success State */
+.successBox {
+  background: rgba(15, 15, 15, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-left: 4px solid #22c55e;
+  border-radius: 4px;
+  padding: 4rem 3rem;
   text-align: center;
-  padding: 4rem 2rem;
-  background: var(--bg-card);
-  border: 1px solid var(--border-subtle);
-  border-radius: 16px;
+  margin-top: 4rem;
 }
 
 .successIcon {
-  font-size: 3rem;
-  margin-bottom: 1.5rem;
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
 }
 
-.success h2 {
-  font-size: 1.75rem;
-  margin-bottom: 0.75rem;
+.successTitle {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #fff;
 }
 
-.success p {
-  color: var(--text-muted);
-  font-size: 1.05rem;
+.successText {
+  color: #bbb;
+  font-size: 1.1rem;
   line-height: 1.7;
-  max-width: 500px;
-  margin: 0 auto;
+  margin-bottom: 2rem;
+}
+
+.resetBtn {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.resetBtn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: #fff;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .splitLayout {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .imagePanel {
+    position: relative;
+    height: 40vh;
+    min-height: 300px;
+  }
+  .formPanel {
+    padding: 4rem 2rem;
+  }
+  .overlayContent {
+    padding: 2rem;
+  }
+  .overlayContent h1 {
+    font-size: 2.5rem;
+  }
 }
 
 @media (max-width: 768px) {
-  .container {
-    padding: 8rem 1.5rem 4rem;
-  }
-  .header h1 {
-    font-size: 2.2rem;
-  }
-  .form {
-    padding: 2rem 1.5rem;
-  }
   .formGrid {
     grid-template-columns: 1fr;
+  }
+  .formPanel {
+    padding: 3rem 1.5rem;
   }
 }

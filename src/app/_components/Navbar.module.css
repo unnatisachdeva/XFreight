@@ -4,7 +4,7 @@
   align-items: center;
   height: 65px;
   padding: 0 4rem;
-  background: rgba(10, 10, 12, 0.8);
+  background: #000;
   backdrop-filter: blur(10px);
   position: fixed;
   width: 100%;
@@ -94,7 +94,7 @@
     height: 60px;
     padding: 0 1.5rem;
   }
-  
+
   .hamburger {
     display: flex;
   }
@@ -129,7 +129,7 @@
   .navLinks.open {
     transform: translateX(0);
   }
-  
+
   .navLinks a {
     font-size: 1.25rem;
   }

@@ -10,7 +10,7 @@ export default function Footer() {
         <div className={styles.brand}>
           <div className={styles.brandLogo}>
             <div className={styles.logoWrapper}>
-              <Image src="/image.png" alt="X Freight Group Inc." fill style={{ objectFit: 'cover' }} />
+              <Image src="/image.png" alt="X Freight Group Inc." fill sizes="(max-width: 768px) 100vw, 33vw" style={{ objectFit: 'cover' }} />
             </div>
           </div>
           <p className={styles.brandDesc}>

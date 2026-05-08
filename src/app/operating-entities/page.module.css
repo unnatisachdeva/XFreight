@@ -1,106 +1,250 @@
 .container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 10rem 2rem 6rem;
+  width: 100%;
+  background-color: #000;
+  color: #fff;
+  overflow-x: hidden;
+  min-height: 100vh;
 }
 
-.header {
-  text-align: center;
-  margin-bottom: 4rem;
-}
-
-.header h1 {
-  font-size: 3.5rem;
-  margin-bottom: 1rem;
-}
-
-.headerHighlight {
+.textPrimary {
   color: var(--primary);
 }
 
-.header p {
-  color: var(--text-muted);
-  font-size: 1.15rem;
-  max-width: 650px;
+/* Hero Section */
+.heroSection {
+  position: relative;
+  width: 100%;
+  height: 60vh;
+  min-height: 450px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 2rem;
+}
+
+.heroBg {
+  object-fit: cover;
+  object-position: center;
+}
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.2) 60%, rgba(0, 0, 0, 0.9) 95%, #000 100%);
+  z-index: 1;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
   margin: 0 auto;
-  line-height: 1.7;
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.8);
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 5vw, 5rem);
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  letter-spacing: -1px;
+}
+
+.subtitle {
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
+  color: #f1f1f1;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+/* Intro Section */
+.introSection {
+  background-color: #000;
+  padding: 4rem 2rem 2rem;
+}
+
+.introBlock {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.leadText {
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 3vw, 1.8rem);
+  font-weight: 400;
+  line-height: 1.6;
+  color: #bbb;
+}
+
+/* Entities Section - Transport Vibe */
+.entitiesSection {
+  background-color: #000;
+  padding: 2rem 2rem 8rem;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem;
 }
 
+/* Industrial Card Style */
 .card {
-  background: var(--bg-card);
-  border: 1px solid var(--border-subtle);
-  border-radius: 16px;
-  padding: 2.5rem;
+  position: relative;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  min-height: 400px;
+  background-color: #050505;
+  /* Angled bottom-right corner for aerodynamics/forward-motion vibe */
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 40px), calc(100% - 40px) 100%, 0 100%);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease;
+  border-left: 4px solid #222;
 }
 
 .card:hover {
-  transform: translateY(-6px);
-  border-color: var(--primary);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  transform: translateY(-5px);
+  border-left-color: var(--primary);
 }
 
-.cardLogo {
-  width: 56px;
-  height: 56px;
-  background: rgba(229, 40, 45, 0.1);
-  border-radius: 14px;
+.cardBg {
+  object-fit: cover;
+  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s ease;
+  z-index: 1;
+  opacity: 0.3;
+}
+
+.card:hover .cardBg {
+  transform: scale(1.08);
+  opacity: 0.5;
+}
+
+/* Diagonal Hazard/Road Pattern */
+.cardPattern {
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    -45deg,
+    rgba(255, 255, 255, 0.02),
+    rgba(255, 255, 255, 0.02) 2px,
+    transparent 2px,
+    transparent 10px
+  );
+  z-index: 2;
+  pointer-events: none;
+}
+
+.cardOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.6) 50%, rgba(0,0,0,0.2) 100%);
+  z-index: 3;
+}
+
+.card:hover .cardOverlay {
+  background: linear-gradient(to right, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.1) 100%);
+}
+
+.cardContent {
+  position: relative;
+  z-index: 4;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.5rem;
-  font-weight: 800;
-  color: var(--primary);
-  margin-bottom: 1.5rem;
+  flex-direction: column;
+  padding: 3.5rem 3rem;
+  height: 100%;
 }
 
-.card h2 {
-  font-size: 1.35rem;
-  margin-bottom: 0.75rem;
+.cardHeader {
+  margin-bottom: 1.5rem;
+  position: relative;
 }
 
-.card p {
-  color: var(--text-muted);
-  line-height: 1.7;
-  margin-bottom: 1.5rem;
+.cardTitle {
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: -0.5px;
+  margin-bottom: 1rem;
+  text-transform: uppercase; /* Stronger transport vibe */
+}
+
+.titleAccent {
+  width: 40px;
+  height: 3px;
+  background-color: var(--primary);
+  transition: width 0.4s ease;
+}
+
+.card:hover .titleAccent {
+  width: 80px;
+}
+
+.cardDesc {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: #ccc;
+  font-weight: 300;
+  margin-bottom: 3rem;
   flex-grow: 1;
+  max-width: 90%;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.8);
 }
 
-.visitBtn {
+.cardFooter {
+  margin-top: auto;
+}
+
+.visitLink {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 10px 20px;
-  border: 1px solid var(--border-subtle);
-  border-radius: 8px;
-  color: var(--text-main);
+  background-color: rgba(229, 40, 45, 0.1);
+  border: 1px solid rgba(229, 40, 45, 0.3);
+  padding: 0.8rem 1.5rem;
+  color: #fff;
   font-weight: 600;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
   transition: all 0.3s ease;
+  clip-path: polygon(0 0, 100% 0, calc(100% - 10px) 100%, 0 100%); /* Angled button */
 }
 
-.visitBtn:hover {
+.visitLink:hover {
+  background-color: var(--primary);
   border-color: var(--primary);
-  color: var(--primary);
+  transform: translateX(5px);
+}
+
+.arrow {
+  margin-left: 0.75rem;
+  transition: transform 0.3s ease;
+}
+
+.visitLink:hover .arrow {
+  transform: translateX(5px);
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  .cardContent {
+    padding: 3rem 2rem;
+  }
 }
 
 @media (max-width: 768px) {
-  .container {
-    padding: 8rem 1.5rem 4rem;
+  .heroSection {
+    height: 50vh;
+    min-height: 350px;
   }
-  .header h1 {
-    font-size: 2.5rem;
-  }
-  .grid {
-    grid-template-columns: 1fr;
+  .cardTitle {
+    font-size: 1.8rem;
   }
 }

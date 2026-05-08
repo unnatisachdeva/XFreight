@@ -1,116 +1,133 @@
 .container {
+  width: 100%;
+  background-color: #000;
+  color: #fff;
+  min-height: 100vh;
+}
+
+/* Hero Section */
+.heroSection {
+  position: relative;
+  width: 100%;
+  height: 60vh;
+  min-height: 450px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 2rem;
+}
+
+.heroBg {
+  object-fit: cover;
+  object-position: center;
+}
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.3) 50%, #000 100%);
+  z-index: 1;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 2;
   max-width: 900px;
   margin: 0 auto;
-  padding: 10rem 2rem 6rem;
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.8);
 }
 
-.header {
-  margin-bottom: 3rem;
+.title {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 5vw, 5rem);
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  letter-spacing: -1px;
 }
 
-.header h1 {
-  font-size: 3rem;
-  margin-bottom: 0.75rem;
-  background: linear-gradient(135deg, var(--primary) 0%, #ff6b35 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+.subtitle {
+  font-size: clamp(1.2rem, 2vw, 1.4rem);
+  color: #f1f1f1;
+  line-height: 1.6;
+  font-weight: 300;
 }
 
-.lastUpdated {
-  color: var(--text-muted);
-  font-size: 0.95rem;
+.textPrimary {
+  color: var(--primary);
 }
 
 .content {
   display: flex;
   flex-direction: column;
-  gap: 2.5rem;
+  gap: 4rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 6rem 2rem;
 }
 
-.section {
-  background: var(--bg-card);
-  border: 1px solid var(--border-subtle);
-  border-radius: 16px;
-  padding: 2.5rem;
-  transition: border-color 0.3s ease;
+.content section h2 {
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  margin-bottom: 1.5rem;
+  color: #fff;
+  font-weight: 600;
 }
 
-.section:hover {
-  border-color: rgba(229, 40, 45, 0.3);
-}
-
-.sectionNumber {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 32px;
-  height: 32px;
-  background: rgba(229, 40, 45, 0.15);
-  color: var(--primary);
-  border-radius: 8px;
-  font-weight: 700;
-  font-size: 0.85rem;
+.content section h3 {
+  font-size: 1.4rem;
+  margin-top: 3rem;
   margin-bottom: 1rem;
+  color: #ddd;
+  font-weight: 600;
 }
 
-.section h2 {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
+.content section p {
+  color: #bbb;
+  line-height: 1.9;
+  font-size: 1.15rem;
+  margin-bottom: 1.5rem;
+  max-width: 900px;
 }
 
-.section p {
-  color: var(--text-muted);
-  line-height: 1.8;
-  font-size: 1rem;
-}
-
-.bulletList {
+.content section ul {
   list-style: none;
   padding: 0;
-  margin-top: 1rem;
+  margin-top: 1.5rem;
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  gap: 1rem;
+  max-width: 900px;
 }
 
-.bulletList li {
-  color: var(--text-muted);
-  padding-left: 1.5rem;
+.content section ul li {
+  color: #bbb;
+  padding-left: 2rem;
   position: relative;
-  line-height: 1.7;
+  line-height: 1.8;
+  font-size: 1.15rem;
 }
 
-.bulletList li::before {
+.content section ul li::before {
   content: '';
   position: absolute;
   left: 0;
-  top: 10px;
-  width: 6px;
-  height: 6px;
+  top: 14px;
+  width: 8px;
+  height: 8px;
   background: var(--primary);
   border-radius: 50%;
 }
 
-.bulletList li strong {
-  color: var(--text-main);
+.content section ul li strong {
+  color: #fff;
 }
 
 .divider {
   border: none;
   height: 1px;
-  background: linear-gradient(90deg, transparent, var(--border-subtle), transparent);
-  margin: 1rem 0;
-}
-
-.smsSection {
-  margin-top: 1rem;
-}
-
-.smsSection h3 {
-  font-size: 1.3rem;
-  margin-bottom: 1.25rem;
-  color: var(--primary);
+  background: rgba(255, 255, 255, 0.1);
+  margin: 2rem 0;
 }
 
 .contactLink {
@@ -125,14 +142,17 @@
 
 @media (max-width: 768px) {
   .container {
-    padding: 8rem 1.5rem 4rem;
+    padding: 8rem 2rem 4rem;
   }
-
-  .header h1 {
-    font-size: 2rem;
+  .heroSection {
+    height: 50vh;
+    min-height: 350px;
   }
-
-  .section {
-    padding: 1.5rem;
+  .content section h2 {
+    font-size: 1.8rem;
+  }
+  .content section p,
+  .content section ul li {
+    font-size: 1.05rem;
   }
 }

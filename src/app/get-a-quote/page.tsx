@@ -16,13 +16,35 @@ const serviceTypes = [
 
 export default function GetAQuotePage() {
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState("");
 
-  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    setSubmitting(true);
+    setError("");
+
     const formData = new FormData(e.currentTarget);
     const data = Object.fromEntries(formData);
-    console.log("Quote request submitted:", data);
-    setSubmitted(true);
+    const finalData = { ...data, formType: "Quote Request" };
+
+    try {
+      const response = await fetch("/api/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(finalData),
+      });
+
+      if (response.ok) {
+        setSubmitted(true);
+      } else {
+        setError("Something went wrong. Please try again later.");
+      }
+    } catch (err) {
+      setError("Failed to connect to the server.");
+    } finally {
+      setSubmitting(false);
+    }
   }
 
   return (
@@ -75,8 +97,8 @@ export default function GetAQuotePage() {
                 <div className={styles.formGrid}>
                   {/* Full Name */}
                   <div className={styles.field}>
-                    <label htmlFor="fullName">Full Name<span className={styles.required}>*</span></label>
-                    <input type="text" id="fullName" name="fullName" required placeholder="John Smith" />
+                    <label htmlFor="firstName">Full Name<span className={styles.required}>*</span></label>
+                    <input type="text" id="firstName" name="firstName" required placeholder="John Smith" />
                   </div>
 
                   {/* Company Name */}
@@ -157,10 +179,17 @@ export default function GetAQuotePage() {
                     </label>
                   </div>
 
+                  {/* Error Message */}
+                  {error && <div className={styles.errorMsg}>{error}</div>}
+
                   {/* Submit */}
                   <div className={styles.submitRow}>
-                    <button type="submit" className={styles.submitBtn}>
-                      Request Quote <span className={styles.arrow}>→</span>
+                    <button 
+                      type="submit" 
+                      className={styles.submitBtn}
+                      disabled={submitting}
+                    >
+                      {submitting ? "Sending..." : "Request Quote"} <span className={styles.arrow}>→</span>
                     </button>
                   </div>
                 </div>

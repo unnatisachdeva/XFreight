@@ -28,14 +28,40 @@ const regions = [
 
 export default function HaulWithUsPage() {
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState("");
 
-  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    setSubmitting(true);
+    setError("");
+
     const formData = new FormData(e.currentTarget);
     const data = Object.fromEntries(formData);
     const selectedRegions = formData.getAll("regions");
-    console.log("Carrier application submitted:", { ...data, regions: selectedRegions });
-    setSubmitted(true);
+    const finalData = { 
+      ...data, 
+      regions: selectedRegions,
+      formType: "Carrier Application" 
+    };
+
+    try {
+      const response = await fetch("/api/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(finalData),
+      });
+
+      if (response.ok) {
+        setSubmitted(true);
+      } else {
+        setError("Something went wrong. Please try again later.");
+      }
+    } catch (err) {
+      setError("Failed to connect to the server.");
+    } finally {
+      setSubmitting(false);
+    }
   }
 
   return (
@@ -87,8 +113,8 @@ export default function HaulWithUsPage() {
                 <div className={styles.formGrid}>
                   {/* Full Name */}
                   <div className={styles.field}>
-                    <label htmlFor="fullName">Full Name<span className={styles.required}>*</span></label>
-                    <input type="text" id="fullName" name="fullName" required placeholder="Jane Doe" />
+                    <label htmlFor="firstName">Full Name<span className={styles.required}>*</span></label>
+                    <input type="text" id="firstName" name="firstName" required placeholder="Jane Doe" />
                   </div>
 
                   {/* Company Name */}
@@ -167,10 +193,17 @@ export default function HaulWithUsPage() {
                     </label>
                   </div>
 
+                  {/* Error Message */}
+                  {error && <div className={styles.errorMsg}>{error}</div>}
+
                   {/* Submit */}
                   <div className={styles.submitRow}>
-                    <button type="submit" className={styles.submitBtn}>
-                      Submit Application <span className={styles.arrow}>→</span>
+                    <button 
+                      type="submit" 
+                      className={styles.submitBtn}
+                      disabled={submitting}
+                    >
+                      {submitting ? "Submitting..." : "Submit Application"} <span className={styles.arrow}>→</span>
                     </button>
                   </div>
                 </div>

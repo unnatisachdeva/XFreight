@@ -11,16 +11,38 @@ export default function CareerRolePage(
 ) {
   const { role: slug } = use(props.params);
   const role = roles.find((r) => r.slug === slug);
-  const [isSubmitted, setIsSubmitted] = useState(false);
-
   if (!role) notFound();
+  
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState("");
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // Simulate submission
-    setTimeout(() => {
-      setIsSubmitted(true);
-    }, 1000);
+    setSubmitting(true);
+    setError("");
+
+    const formData = new FormData(e.currentTarget);
+    const data = Object.fromEntries(formData);
+    const finalData = { ...data, formType: `Careers Application: ${role.title}` };
+
+    try {
+      const response = await fetch("/api/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(finalData),
+      });
+
+      if (response.ok) {
+        setIsSubmitted(true);
+      } else {
+        setError("Something went wrong. Please try again later.");
+      }
+    } catch (err) {
+      setError("Failed to connect to the server.");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   if (isSubmitted) {
@@ -92,31 +114,37 @@ export default function CareerRolePage(
             <form className={styles.form} onSubmit={handleSubmit}>
               <div className={styles.field}>
                 <label>Full Name <span className={styles.required}>*</span></label>
-                <input type="text" placeholder="John Doe" required />
+                <input name="firstName" type="text" placeholder="John Doe" required />
               </div>
 
               <div className={styles.field}>
                 <label>Email Address <span className={styles.required}>*</span></label>
-                <input type="email" placeholder="john@example.com" required />
+                <input name="email" type="email" placeholder="john@example.com" required />
               </div>
 
               <div className={styles.field}>
                 <label>Phone Number <span className={styles.required}>*</span></label>
-                <input type="tel" placeholder="(555) 000-0000" required />
+                <input name="phone" type="tel" placeholder="(555) 000-0000" required />
               </div>
 
               <div className={styles.field}>
                 <label>Resume Link / Profile <span className={styles.required}>*</span></label>
-                <input type="url" placeholder="LinkedIn or Drive link" required />
+                <input name="resume" type="url" placeholder="LinkedIn or Drive link" required />
               </div>
 
               <div className={styles.field}>
                 <label>Tell us about yourself</label>
-                <textarea placeholder="Briefly describe your experience..."></textarea>
+                <textarea name="bio" placeholder="Briefly describe your experience..."></textarea>
               </div>
 
-              <button type="submit" className={styles.submitBtn}>
-                Submit Application
+              {error && <div className={styles.errorMsg}>{error}</div>}
+
+              <button 
+                type="submit" 
+                className={styles.submitBtn}
+                disabled={submitting}
+              >
+                {submitting ? "Submitting..." : "Submit Application"}
               </button>
             </form>
           </div>

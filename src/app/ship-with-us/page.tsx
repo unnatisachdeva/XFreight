@@ -33,14 +33,36 @@ const serviceOptions = [
 
 export default function ShipWithUsPage() {
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
   const [selectedNeed, setSelectedNeed] = useState("");
+  const [error, setError] = useState("");
 
-  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    setSubmitting(true);
+    setError("");
+
     const formData = new FormData(e.currentTarget);
     const data = Object.fromEntries(formData);
-    console.log("Ship With Us form submitted:", data);
-    setSubmitted(true);
+    const finalData = { ...data, formType: "Ship With Us" };
+    
+    try {
+      const response = await fetch("/api/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(finalData),
+      });
+
+      if (response.ok) {
+        setSubmitted(true);
+      } else {
+        setError("Something went wrong. Please try again later.");
+      }
+    } catch (err) {
+      setError("Failed to connect to the server.");
+    } finally {
+      setSubmitting(false);
+    }
   }
 
   return (
@@ -190,10 +212,17 @@ export default function ShipWithUsPage() {
                     </label>
                   </div>
 
+                  {/* Error Message */}
+                  {error && <div className={styles.errorMsg}>{error}</div>}
+
                   {/* Submit */}
                   <div className={styles.submitRow}>
-                    <button type="submit" className={styles.submitBtn}>
-                      Submit Request <span className={styles.arrow}>→</span>
+                    <button 
+                      type="submit" 
+                      className={styles.submitBtn}
+                      disabled={submitting}
+                    >
+                      {submitting ? "Sending..." : "Submit Request"} <span className={styles.arrow}>→</span>
                     </button>
                   </div>
                 </div>

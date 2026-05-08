@@ -72,7 +72,7 @@ export default function HaulWithUsPage() {
       {/* Left Side - Image */}
       <div className={styles.imagePanel}>
         <Image
-          src="/opendeck.jpeg"
+          src="/s-opendeck.jpeg"
           alt="X Freight Partner Carriers"
           fill
           className={styles.sideImage}

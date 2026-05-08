@@ -75,7 +75,7 @@ export default function ShipWithUsPage() {
       {/* Left Side - Image */}
       <div className={styles.imagePanel}>
         <Image
-          src="/freightbrokerage.jpeg"
+          src="/s-freightbrokerage.jpeg"
           alt="X Freight Logistics Services"
           fill
           sizes="(max-width: 768px) 100vw, 50vw"

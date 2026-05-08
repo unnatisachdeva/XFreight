@@ -17,6 +17,7 @@ export default function Navbar() {
             alt="X Freight Group Inc."
             fill
             style={{ objectFit: 'cover' }}
+            sizes="200px"
             className={styles.logoImg}
             priority
           />

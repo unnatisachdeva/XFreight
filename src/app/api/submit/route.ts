@@ -6,12 +6,12 @@ export async function POST(request: Request) {
     const body = await request.json();
     const { formType, ...formData } = body;
 
-    const companyEmail = process.env.CONTACT_EMAIL || "info@xfreight.ca";
+    const companyEmail = process.env.SMTP_USER;
     const userEmail = formData.email;
 
-    if (!userEmail) {
+    if (!companyEmail || !userEmail) {
       return NextResponse.json(
-        { success: false, error: "User email is required" },
+        { success: false, error: "Configuration or User email missing" },
         { status: 400 }
       );
     }

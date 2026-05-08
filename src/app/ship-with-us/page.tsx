@@ -91,7 +91,12 @@ export default function ShipWithUsPage() {
         <div className={styles.formContent}>
           {submitted ? (
             <div className={`${styles.successBox} animate-fade-in`}>
-              <div className={styles.successIcon}>✅</div>
+              <div className={styles.successIcon}>
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#e5282d" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                  <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                </svg>
+              </div>
               <h2 className={styles.successTitle}>Thank You!</h2>
               <p className={styles.successText}>
                 We&apos;ve received your request and a member of our team will be in touch shortly.
@@ -222,7 +227,11 @@ export default function ShipWithUsPage() {
                       className={styles.submitBtn}
                       disabled={submitting}
                     >
-                      {submitting ? "Sending..." : "Submit Request"} <span className={styles.arrow}>→</span>
+                      {submitting ? (
+                        <><span className="spinner"></span> Sending...</>
+                      ) : (
+                        <>Submit Request <span className={styles.arrow}>→</span></>
+                      )}
                     </button>
                   </div>
                 </div>

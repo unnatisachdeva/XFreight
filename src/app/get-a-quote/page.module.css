@@ -14,8 +14,7 @@
 /* Left Image Panel */
 .imagePanel {
   flex: 1;
-  position: sticky;
-  top: 0;
+  position: relative;
   height: 100vh;
   display: flex;
   flex-direction: column;

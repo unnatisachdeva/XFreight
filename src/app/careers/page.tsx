@@ -5,9 +5,17 @@ import { roles } from "./_data/careers";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = {
-  title: "Careers | X Freight Group",
+  title: "Careers",
   description:
     "Join the X Freight Group team. Explore open positions in Sales, Operations, and Driving across Western Canada.",
+  openGraph: {
+    title: "Careers | X Freight Group",
+    description: "We're more than just logistics. Explore open positions in Sales, Operations, and Driving across Western Canada.",
+    url: "/careers",
+  },
+  alternates: {
+    canonical: "/careers",
+  },
 };
 
 export default function CareersPage() {

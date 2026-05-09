@@ -44,12 +44,15 @@
   max-width: 280px;
 }
 
-.column h4 {
+.column h4,
+.columnHeading {
   font-size: 0.85rem;
   text-transform: uppercase;
   letter-spacing: 1.5px;
   color: var(--text-muted);
   margin-bottom: 1.25rem;
+  font-family: var(--font-display);
+  font-weight: 700;
 }
 
 .column ul {

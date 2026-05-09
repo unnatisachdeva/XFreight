@@ -3,9 +3,17 @@ import Image from "next/image";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = {
-  title: "Operating Entities | X Freight Group",
+  title: "Operating Entities",
   description:
-    "Explore the affiliated companies under the X Freight Group family of brands.",
+    "Explore the affiliated companies under the X Freight Group family of brands — X Freight Group Inc., The X Group Inc., X Transport Inc., and Every Way Transport Ltd.",
+  openGraph: {
+    title: "Operating Entities | X Freight Group",
+    description: "The affiliated companies under the X Freight Group family of brands.",
+    url: "/operating-entities",
+  },
+  alternates: {
+    canonical: "/operating-entities",
+  },
 };
 
 const entities = [

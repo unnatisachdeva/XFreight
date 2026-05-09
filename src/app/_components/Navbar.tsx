@@ -9,7 +9,7 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className={styles.nav}>
+    <nav className={styles.nav} aria-label="Main navigation">
       <Link href="/" className={styles.logo} onClick={() => setIsOpen(false)}>
         <div className={styles.logoWrapper}>
           <Image
@@ -53,6 +53,7 @@ export default function Navbar() {
           className={`${styles.hamburger} ${isOpen ? styles.open : ""}`}
           onClick={() => setIsOpen(!isOpen)}
           aria-label="Toggle menu"
+          aria-expanded={isOpen}
         >
           <span></span>
           <span></span>

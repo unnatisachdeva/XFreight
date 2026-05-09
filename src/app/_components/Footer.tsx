@@ -20,29 +20,29 @@ export default function Footer() {
         </div>
 
         {/* Navigation */}
-        <div className={styles.column}>
-          <h4>Navigation</h4>
+        <nav className={styles.column} aria-label="Footer navigation">
+          <p className={styles.columnHeading}>Navigation</p>
           <ul>
             <li><Link href="/">Home</Link></li>
             <li><Link href="/services">Services</Link></li>
             <li><Link href="/operating-entities">Operating Entities</Link></li>
             <li><Link href="/careers">Careers</Link></li>
           </ul>
-        </div>
+        </nav>
 
         {/* Services */}
-        <div className={styles.column}>
-          <h4>Services</h4>
+        <nav className={styles.column} aria-label="Services links">
+          <p className={styles.columnHeading}>Services</p>
           <ul>
             <li><Link href="/ship-with-us">Ship With Us</Link></li>
             <li><Link href="/get-a-quote">Get a Quote</Link></li>
             <li><Link href="/haul-with-us">Haul With Us</Link></li>
           </ul>
-        </div>
+        </nav>
 
         {/* Contact */}
         <div className={styles.column}>
-          <h4>Contact</h4>
+          <p className={styles.columnHeading}>Contact</p>
           <ul>
             <li>
               <a href="mailto:info@xfreight.ca">info@xfreight.ca</a>

@@ -3,8 +3,16 @@ import Image from "next/image";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = {
-  title: "About Us | X Freight Group",
+  title: "About Us",
   description: "Learn about X Freight Group's commitment to trust, consistency, and reliable logistics execution in Western Canada.",
+  openGraph: {
+    title: "About Us | X Freight Group",
+    description: "Learn about X Freight Group's commitment to trust, consistency, and reliable logistics execution in Western Canada.",
+    url: "/about-us",
+  },
+  alternates: {
+    canonical: "/about-us",
+  },
 };
 
 export default function AboutPage() {

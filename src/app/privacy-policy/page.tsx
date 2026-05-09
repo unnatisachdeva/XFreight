@@ -3,8 +3,20 @@ import Image from "next/image";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | X Freight Group",
+  title: "Privacy Policy",
   description: "X Freight Group Inc. Privacy Policy — how we collect, use, and protect your personal information.",
+  openGraph: {
+    title: "Privacy Policy | X Freight Group",
+    description: "How X Freight Group Inc. collects, uses, and protects your personal information.",
+    url: "/privacy-policy",
+  },
+  alternates: {
+    canonical: "/privacy-policy",
+  },
+  robots: {
+    index: false,
+    follow: true,
+  },
 };
 
 export default function PrivacyPolicyPage() {

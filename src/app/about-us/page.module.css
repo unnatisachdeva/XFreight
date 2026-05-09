@@ -156,3 +156,65 @@
     padding-bottom: 4rem;
   }
 }
+
+@media (max-width: 768px) {
+  .contentWrapper {
+    padding: 0 1.5rem;
+    margin-top: 80px;
+    gap: 2rem;
+  }
+
+  .title {
+    font-size: 3rem;
+  }
+
+  .label {
+    font-size: 0.8rem;
+    letter-spacing: 3px;
+  }
+
+  .glassPanel {
+    padding: 2.5rem 2rem;
+    gap: 2rem;
+    border-radius: 12px;
+  }
+
+  .lead {
+    font-size: 1.15rem;
+    padding-bottom: 1rem;
+  }
+
+  .textCol p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+}
+
+@media (max-width: 480px) {
+  .contentWrapper {
+    padding: 0 1rem;
+    margin-top: 70px;
+    gap: 1.5rem;
+  }
+
+  .title {
+    font-size: 2.5rem;
+  }
+
+  .glassPanel {
+    padding: 1.75rem 1.25rem;
+    gap: 1.5rem;
+  }
+
+  .lead {
+    font-size: 1.05rem;
+  }
+
+  .textCol p {
+    font-size: 0.9rem;
+  }
+
+  .container {
+    padding-bottom: 3rem;
+  }
+}

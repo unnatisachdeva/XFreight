@@ -55,14 +55,18 @@
 .hamburger {
   display: none;
   flex-direction: column;
-  justify-content: space-between;
-  width: 24px;
-  height: 18px;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 44px;
+  height: 44px;
   background: transparent;
   border: none;
   cursor: pointer;
   z-index: 101;
-  padding: 0;
+  padding: 10px;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
 }
 
 .hamburger span {
@@ -116,6 +120,7 @@
     width: 100%;
     height: calc(100vh - 60px);
     background: rgba(10, 10, 12, 0.98);
+    -webkit-backdrop-filter: blur(12px);
     backdrop-filter: blur(12px);
     flex-direction: column;
     align-items: center;
@@ -124,6 +129,8 @@
     transform: translateX(100%);
     transition: transform 0.3s ease-in-out;
     border-top: 1px solid var(--border-subtle);
+    -webkit-overflow-scrolling: touch;
+    overflow-y: auto;
   }
 
   .navLinks.open {
@@ -132,5 +139,21 @@
   
   .navLinks a {
     font-size: 1.25rem;
+  }
+
+  .logoWrapper {
+    width: 160px;
+    height: 45px;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav {
+    padding: 0 1rem;
+  }
+
+  .logoWrapper {
+    width: 140px;
+    height: 40px;
   }
 }

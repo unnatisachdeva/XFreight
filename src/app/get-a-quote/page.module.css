@@ -344,4 +344,71 @@
   .formPanel {
     padding: 3rem 1.5rem;
   }
+  .imagePanel {
+    height: 35vh;
+    min-height: 250px;
+  }
+  .overlayContent h1 {
+    font-size: 2.2rem;
+  }
+  .overlayContent p {
+    font-size: 1.05rem;
+  }
+  .formTitle {
+    font-size: 2.2rem;
+  }
+  .successBox {
+    padding: 3rem 2rem;
+  }
+  .successTitle {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .formPanel {
+    padding: 2rem 1rem;
+  }
+  .imagePanel {
+    height: 30vh;
+    min-height: 220px;
+  }
+  .imageOverlay {
+    padding: 2rem 1.25rem;
+  }
+  .overlayContent h1 {
+    font-size: 1.8rem;
+  }
+  .overlayContent p {
+    font-size: 0.95rem;
+  }
+  .formTitle {
+    font-size: 1.8rem;
+  }
+  .formSubtitle {
+    font-size: 0.95rem;
+  }
+  .formHeader {
+    margin-bottom: 2rem;
+  }
+  .field input,
+  .field select,
+  .field textarea {
+    padding: 12px 14px;
+    font-size: 0.95rem;
+  }
+  .submitBtn {
+    padding: 1rem;
+    font-size: 1rem;
+  }
+  .successBox {
+    padding: 2.5rem 1.5rem;
+    margin-top: 2rem;
+  }
+  .successTitle {
+    font-size: 1.7rem;
+  }
+  .successText {
+    font-size: 1rem;
+  }
 }

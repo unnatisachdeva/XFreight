@@ -34,7 +34,7 @@ const entities = [
     name: "Every Way Transport Ltd.",
     desc: "Every Way Transport Ltd. operates our end-dump fleet, providing bulk hauling solutions for infrastructure and construction projects across Western Canada. We support high-volume movement of aggregate, soil, and other materials with dependable equipment and efficient turnaround times. Built for production environments, our team delivers consistent performance to keep projects on schedule.",
     url: "#",
-    image: "/logoewt2bg.png",
+    image: "/logoewt4.png",
   },
 ];
 

@@ -9,7 +9,7 @@ export default function Home() {
       {/* 1. 100vh Hero Section */}
       <section className={styles.hero}>
         <div className={styles.heroBg}>
-           <Image src="/hero3.png" alt="X Freight Heavy Transport" fill sizes="100vw" className={styles.heroImage} priority />
+           <Image src="/finalhero.jpeg" alt="X Freight Heavy Transport" fill sizes="100vw" className={styles.heroImage} priority />
            <div className={styles.heroOverlay}></div>
         </div>
         

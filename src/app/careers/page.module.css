@@ -214,5 +214,75 @@
     height: 35vh;
     min-height: 250px;
   }
+
+  .sectionHeader h2 {
+    font-size: 2.2rem;
+  }
+
+  .jobsSection {
+    padding: 0 0 6rem;
+  }
+
+  .carousel {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1rem 0;
+  }
+
+  .jobCard {
+    flex: 1 1 auto;
+    width: 100%;
+    max-width: 500px;
+    padding: 2rem;
+  }
+
+  .cardMain h3 {
+    font-size: 1.6rem;
+  }
+
+  .cardMain p {
+    margin-bottom: 2rem;
+  }
+
+  .cardHeader {
+    margin-bottom: 2rem;
+  }
 }
 
+@media (max-width: 480px) {
+  .heroSection {
+    height: 30vh;
+    min-height: 220px;
+    padding: 0 1rem;
+  }
+
+  .sectionHeader {
+    margin: 0 auto 2.5rem;
+  }
+
+  .sectionHeader h2 {
+    font-size: 1.8rem;
+  }
+
+  .carouselContainer {
+    padding: 0 1rem;
+  }
+
+  .jobCard {
+    padding: 1.75rem;
+  }
+
+  .cardMain h3 {
+    font-size: 1.4rem;
+  }
+
+  .cardMain p {
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .btn {
+    font-size: 1rem;
+  }
+}

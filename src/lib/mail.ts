@@ -19,9 +19,14 @@ interface MailOptions {
   subject: string;
   text?: string;
   html: string;
+  attachments?: Array<{
+    filename: string;
+    path: string;
+    cid: string;
+  }>;
 }
 
-export async function sendMail({ to, subject, text, html }: MailOptions) {
+export async function sendMail({ to, subject, text, html, attachments }: MailOptions) {
   try {
     const info = await transporter.sendMail({
       from: `"X Freight Notifications" <${process.env.SMTP_USER}>`,
@@ -29,6 +34,7 @@ export async function sendMail({ to, subject, text, html }: MailOptions) {
       subject,
       text,
       html,
+      attachments,
     });
     return { success: true, messageId: info.messageId };
   } catch (error) {

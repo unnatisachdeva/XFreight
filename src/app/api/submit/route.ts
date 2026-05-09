@@ -45,14 +45,14 @@ export async function POST(request: Request) {
       html: companyHtml,
     });
 
-    const logoPath = path.join(process.cwd(), "public", "image.png");
+    const logoPath = path.join(process.cwd(), "public", "mailimg-trimmed.png");
 
     // 2. Send confirmation to the User
     const userSubject = "We've received your request - X Freight Group";
     const userHtml = `
       <div style="font-family: sans-serif; padding: 20px; border: 1px solid #eee; border-radius: 10px; max-width: 600px; margin: 0 auto; background-color: #fff;">
-        <div style="text-align: center; margin-bottom: 30px; padding-bottom: 20px; border-bottom: 1px solid #eee;">
-          <img src="cid:companyLogo" alt="X Freight Group Logo" style="max-height: 80px; width: auto;" />
+        <div style="text-align: center; margin-bottom: 15px; padding-bottom: 10px; border-bottom: 1px solid #eee;">
+          <img src="cid:companyLogo" alt="X Freight Group Logo" style="max-height: 100px; width: auto;" />
         </div>
         <h2 style="color: #e5282d;">Thank You for Reaching Out</h2>
         <p>Dear ${formData.firstName || "Customer"},</p>

@@ -35,6 +35,7 @@ const entities = [
     desc: "Every Way Transport Ltd. operates our end-dump fleet, providing bulk hauling solutions for infrastructure and construction projects across Western Canada. We support high-volume movement of aggregate, soil, and other materials with dependable equipment and efficient turnaround times. Built for production environments, our team delivers consistent performance to keep projects on schedule.",
     url: "#",
     image: "/logoewt4.png",
+    noHoverZoom: true,
   },
 ];
 
@@ -83,7 +84,7 @@ export default function OperatingEntitiesPage() {
                   alt={`${entity.name} logo`}
                   width={450}
                   height={160}
-                  className={styles.entityLogo}
+                  className={`${styles.entityLogo} ${entity.noHoverZoom ? styles.noHover : ""}`}
                   style={entity.scale ? { transform: `scale(${entity.scale})` } : {}}
                 />
               </div>

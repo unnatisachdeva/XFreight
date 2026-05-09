@@ -117,6 +117,10 @@
   transform: scale(1.05);
 }
 
+.card:hover .entityLogo.noHover {
+  transform: none;
+}
+
 /* Entity Name */
 .entityName {
   font-family: var(--font-display);

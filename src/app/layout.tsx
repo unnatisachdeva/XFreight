@@ -34,7 +34,12 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "X Freight Group Inc." }],
   icons: {
-    icon: "/favicon.svg",
+    icon: [
+      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/favicon.png", type: "image/png" },
+    ],
+    shortcut: "/favicon.ico",
+    apple: "/favicon.png",
   },
   openGraph: {
     type: "website",
@@ -73,7 +78,7 @@ const organizationJsonLd = {
   "@type": "Organization",
   name: "X Freight Group Inc.",
   url: "https://www.xfreight.ca",
-  logo: "https://www.xfreight.ca/image.png",
+  logo: "https://www.xfreight.ca/favicon.png",
   description:
     "Asset-backed Western-Canadian logistics company offering full-service freight transportation including Flatbed, Oil Field, Aggregate, Heavy-Haul, Ice Road, and Freight Brokerage.",
   contactPoint: {

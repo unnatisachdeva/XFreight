@@ -303,8 +303,20 @@
 }
 
 @media (max-width: 992px) {
+  .layoutWrapper {
+    flex-direction: column;
+  }
   .sidebar {
-    display: none; /* Hide sticky nav on mobile/tablet */
+    display: block;
+    flex: none;
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+  .stickyNav {
+    position: static;
+    border-right: none;
+    padding-right: 0;
+    padding-left: 20px; /* Space for the active dot */
   }
   .serviceHeader h2 {
     font-size: 2.8rem;

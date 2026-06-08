@@ -1,18 +1,41 @@
 import nodemailer from "nodemailer";
 
+const host = process.env.SMTP_HOST;
+const port = parseInt(process.env.SMTP_PORT || "587", 10);
+const secure = process.env.SMTP_SECURE === "true";
+const user = process.env.SMTP_USER;
+const pass = process.env.SMTP_PASS;
+
 console.log("Initializing Mailer with:", {
-  host: process.env.SMTP_HOST,
-  user: process.env.SMTP_USER,
-  port: 465
+  host,
+  port,
+  secure,
+  user,
+  passLength: pass ? pass.length : 0,
 });
 
-const transporter = nodemailer.createTransport({
-  service: "gmail",
-  auth: {
-    user: process.env.SMTP_USER,
-    pass: process.env.SMTP_PASS,
-  },
-});
+const transporter = nodemailer.createTransport(
+  host
+    ? {
+        host,
+        port,
+        secure,
+        auth: {
+          user,
+          pass,
+        },
+        tls: {
+          rejectUnauthorized: false,
+        },
+      }
+    : {
+        service: "gmail",
+        auth: {
+          user,
+          pass,
+        },
+      }
+);
 
 interface MailOptions {
   to: string;
@@ -28,8 +51,9 @@ interface MailOptions {
 
 export async function sendMail({ to, subject, text, html, attachments }: MailOptions) {
   try {
+    const fromAddress = process.env.SMTP_FROM || process.env.SMTP_USER;
     const info = await transporter.sendMail({
-      from: `"X Freight Notifications" <${process.env.SMTP_USER}>`,
+      from: `"X Freight Notifications" <${fromAddress}>`,
       to,
       subject,
       text,

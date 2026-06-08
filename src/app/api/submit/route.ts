@@ -7,10 +7,10 @@ export async function POST(request: Request) {
     const body = await request.json();
     const { formType, ...formData } = body;
 
-    const companyEmail = process.env.SMTP_USER;
+    const companyEmail = process.env.NOTIFICATION_EMAIL || process.env.SMTP_FROM || process.env.SMTP_USER;
     const userEmail = formData.email;
 
-    if (!companyEmail || !userEmail) {
+    if (!companyEmail || companyEmail === "resend" || !userEmail) {
       return NextResponse.json(
         { success: false, error: "Configuration or User email missing" },
         { status: 400 }

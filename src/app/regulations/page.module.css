@@ -1,0 +1,553 @@
+.container {
+  width: 100%;
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+  min-height: 100vh;
+}
+
+.textPrimary {
+  color: var(--primary);
+}
+
+/* Hero */
+.heroSection {
+  position: relative;
+  width: 100%;
+  min-height: 45vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 6rem 2rem 4rem;
+}
+
+.heroBg {
+  object-fit: cover;
+  object-position: center 85%;
+  transform: scale(1.08);
+}
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.75) 0%,
+    rgba(0, 0, 0, 0.55) 50%,
+    var(--bg-dark) 100%
+  );
+  z-index: 1;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: 800;
+  margin-bottom: 1.25rem;
+  letter-spacing: -1px;
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.8);
+}
+
+.subtitle {
+  font-size: clamp(1.1rem, 2vw, 1.35rem);
+  color: #e5e5e5;
+  line-height: 1.6;
+  font-weight: 300;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.disclaimer {
+  position: relative;
+  z-index: 2;
+  margin-top: 1.5rem;
+  padding: 0.75rem 1.25rem;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--border-subtle);
+  border-radius: 8px;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Layout */
+.layoutWrapper {
+  display: flex;
+  max-width: none;
+  margin: 0 auto;
+  padding: 4rem 2rem 8rem;
+  gap: 3rem;
+}
+
+.sidebar {
+  flex: 0 0 280px;
+  position: relative;
+}
+
+.stickyNav {
+  position: sticky;
+  top: 100px;
+  padding-right: 1.5rem;
+  border-right: 1px solid var(--border-subtle);
+}
+
+.navTitle {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 1.5rem;
+}
+
+.navList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+}
+
+.navLink {
+  color: #a1a1aa;
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.2s ease;
+  display: block;
+}
+
+.navLink:hover,
+.navLink:focus-visible {
+  color: var(--text-main);
+  outline: none;
+}
+
+.mainContent {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.sectionTitle {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.sectionIntro {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+/* Controls */
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.filterGroup,
+.viewGroup {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.controlBtn {
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  border-radius: 6px;
+  background: transparent;
+  border: 1px solid var(--border-subtle);
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.controlBtn:hover,
+.controlBtn:focus-visible {
+  border-color: var(--primary);
+  color: var(--text-main);
+  outline: none;
+}
+
+.controlBtnActive {
+  background-color: var(--primary);
+  border-color: var(--primary);
+  color: #fff;
+}
+
+.controlBtnActive:hover {
+  color: #fff;
+}
+
+/* Map */
+.mapWrapper {
+  position: relative;
+  width: 100%;
+  height: 680px;
+  background:
+    radial-gradient(circle at 50% 35%, rgba(229, 40, 45, 0.08), transparent 42%),
+    #080808;
+  border: 1px solid var(--border-subtle);
+  border-radius: 8px;
+  padding: 1rem;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.28);
+}
+
+.mapContainer {
+  flex: 1;
+  width: 100%;
+  min-height: 0;
+  overflow: hidden;
+  background: transparent;
+  border-radius: 6px;
+}
+
+.mapContainer :global(.leaflet-container) {
+  background: transparent !important;
+}
+
+.mapContainer :global(.leaflet-control-zoom a) {
+  background: rgba(10, 10, 12, 0.92) !important;
+  color: var(--text-main) !important;
+  border-color: var(--border-subtle) !important;
+}
+
+.mapContainer :global(.leaflet-control-zoom a:hover) {
+  background: var(--primary) !important;
+  color: #ffffff !important;
+}
+
+.mapLegend {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 0.85rem;
+  padding: 0.85rem 0 0;
+  border-top: 1px solid var(--border-subtle);
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.legendItem {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.legendDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.legendDotCa {
+  background-color: var(--primary);
+}
+
+.legendDotUs {
+  background-color: #3b82f6;
+}
+
+.legendDotTerminal {
+  background-color: #22c55e;
+}
+
+.regionLabel {
+  display: inline-block;
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #000000;
+  text-shadow:
+    0 0 2px rgba(255, 255, 255, 0.95),
+    0 0 4px rgba(255, 255, 255, 0.8);
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.mapTooltip {
+  background: rgba(10, 10, 12, 0.95) !important;
+  border: 1px solid var(--border-subtle) !important;
+  color: var(--text-main) !important;
+  border-radius: 6px !important;
+  padding: 0.35rem 0.7rem !important;
+  font-size: 0.85rem !important;
+  font-weight: 600 !important;
+  white-space: nowrap !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4) !important;
+}
+
+.terminalMarker {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80px;
+  pointer-events: none;
+}
+
+.terminalMarker svg {
+  filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.6));
+}
+
+.terminalLabel {
+  margin-top: 2px;
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  white-space: nowrap;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid #d4d4d4;
+  border-radius: 3px;
+  padding: 1px 4px;
+}
+
+.mapTooltip:global(.leaflet-tooltip-bottom)::before,
+.mapTooltip:global(.leaflet-tooltip-top)::before {
+  border: none !important;
+}
+
+/* Region list/grid */
+.regionGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.regionCard {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.25rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 10px;
+  text-decoration: none;
+  color: var(--text-main);
+  transition: all 0.2s ease;
+}
+
+.regionCard:hover,
+.regionCard:focus-visible {
+  border-color: var(--primary);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+  outline: none;
+}
+
+.regionName {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.countryBadge {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--text-muted);
+}
+
+.emptyState {
+  color: var(--text-muted);
+  padding: 2rem;
+  text-align: center;
+  border: 1px dashed var(--border-subtle);
+  border-radius: 10px;
+}
+
+/* Resource category sections */
+.categoriesWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.categorySection {
+  scroll-margin-top: 100px;
+  padding-bottom: 3rem;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.categorySection:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.categoryTitle {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.categoryDescription {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+  max-width: 800px;
+}
+
+.pointList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.pointList li {
+  position: relative;
+  padding-left: 1.5rem;
+  color: #d4d4d8;
+  line-height: 1.5;
+}
+
+.pointList li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55rem;
+  width: 6px;
+  height: 6px;
+  background-color: var(--primary);
+  border-radius: 50%;
+}
+
+/* CTA */
+.ctaStrip {
+  margin-top: 2rem;
+  padding: 2rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  text-align: center;
+}
+
+.ctaText {
+  color: var(--text-muted);
+  margin-bottom: 1.25rem;
+  font-size: 1.05rem;
+}
+
+.ctaBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: var(--primary);
+  color: #fff;
+  padding: 0.875rem 1.75rem;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.ctaBtn:hover,
+.ctaBtn:focus-visible {
+  background-color: var(--primary-hover);
+  transform: translateY(-2px);
+  outline: none;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .layoutWrapper {
+    flex-direction: column;
+    gap: 2rem;
+    padding: 3rem 1.5rem 6rem;
+  }
+
+  .sidebar {
+    flex: none;
+    width: 100%;
+  }
+
+  .stickyNav {
+    position: static;
+    border-right: none;
+    padding-right: 0;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+
+  .navList {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.75rem 1.25rem;
+  }
+
+  .controls {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 768px) {
+  .heroSection {
+    min-height: 35vh;
+    padding: 5rem 1.5rem 3rem;
+  }
+
+  .mapWrapper {
+    height: 480px;
+  }
+
+  .regionGrid {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  }
+
+  .categorySection {
+    scroll-margin-top: 80px;
+  }
+}
+
+@media (max-width: 480px) {
+  .layoutWrapper {
+    padding: 2rem 1rem 4rem;
+  }
+
+  .navList {
+    gap: 0.6rem 1rem;
+  }
+
+  .controlBtn {
+    padding: 0.45rem 0.75rem;
+    font-size: 0.85rem;
+  }
+
+  .regionGrid {
+    grid-template-columns: 1fr;
+  }
+}

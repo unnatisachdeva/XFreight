@@ -1,7 +1,33 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Truck, Flame, Snowflake, Mountain, Settings, Handshake, ShieldCheck, Clock, MapPin } from "lucide-react";
 import styles from "./page.module.css";
+
+const certifications = [
+  {
+    name: "U.S. & Canada Bonded Carrier",
+    image: "/cert-us-canada-bonded.png",
+    width: 470,
+    height: 313,
+  },
+  {
+    name: "SmartWay Transport Partner",
+    image: "/cert-smartway-partner.jpg",
+    width: 450,
+    height: 185,
+  },
+  {
+    name: "ACE — Automated Commercial Environment",
+    image: "/cert-ace.svg",
+    width: 520,
+    height: 230,
+  },
+  {
+    name: "ACI — Advance Commercial Information",
+    image: "/cert-aci.svg",
+    width: 520,
+    height: 230,
+  },
+];
 
 export default function Home() {
   return (
@@ -104,6 +130,43 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* 3. Certifications */}
+      <section className={styles.certificationsSection} aria-labelledby="certifications-title">
+        <div className={styles.certificationsInner}>
+          <div className={styles.certificationsHeading}>
+            <span className={styles.certificationsEyebrow}>Trusted across borders</span>
+            <h2 id="certifications-title">Certifications <span>&amp; partnerships</span></h2>
+            <p>Recognized programs that support secure, compliant, and responsible freight movement.</p>
+          </div>
+
+          <div className={styles.certificationsViewport}>
+            <div className={styles.certificationsTrack}>
+              {[0, 1].map((setIndex) => (
+                <div
+                  className={styles.certificationsGroup}
+                  key={setIndex}
+                  aria-hidden={setIndex === 1 ? "true" : undefined}
+                >
+                  {certifications.map((certification) => (
+                    <div className={styles.certificationCard} key={`${setIndex}-${certification.name}`}>
+                      <Image
+                        src={certification.image}
+                        alt={setIndex === 0 ? certification.name : ""}
+                        width={certification.width}
+                        height={certification.height}
+                        sizes="(max-width: 480px) 190px, (max-width: 768px) 210px, 230px"
+                        className={styles.certificationLogo}
+                      />
+                    </div>
+                  ))}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
             {/* 3. Qualitative Trust Bar
       <section className={styles.trustBar}>
         <div className={styles.trustItem}>

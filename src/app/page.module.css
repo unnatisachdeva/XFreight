@@ -362,7 +362,125 @@
 }
 
 /* =========================================
-   4. Massive CTA Block
+   4. Certifications marquee
+   ========================================= */
+.certificationsSection {
+  width: 100%;
+  padding: 0 2rem 7rem;
+  overflow: hidden;
+  color: #fff;
+  background-color: #000;
+}
+
+.certificationsInner {
+  display: grid;
+  grid-template-columns: minmax(210px, 260px) minmax(0, 1fr);
+  align-items: center;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 1520px;
+  margin: 0 auto;
+  padding: 2rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.certificationsHeading {
+  position: relative;
+  z-index: 2;
+}
+
+.certificationsEyebrow {
+  display: block;
+  margin-bottom: 0.65rem;
+  color: var(--primary);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.certificationsHeading h2 {
+  margin: 0 0 0.75rem;
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 2.4vw, 2.3rem);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+
+.certificationsHeading h2 span {
+  display: block;
+  color: var(--primary);
+}
+
+.certificationsHeading p {
+  max-width: 280px;
+  margin: 0;
+  color: #aaa;
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+
+.certificationsViewport {
+  position: relative;
+  min-width: 0;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent);
+}
+
+.certificationsTrack {
+  display: flex;
+  width: max-content;
+  animation: certificationMarquee 28s linear infinite;
+  will-change: transform;
+}
+
+.certificationsViewport:hover .certificationsTrack {
+  animation-play-state: paused;
+}
+
+.certificationsGroup {
+  display: flex;
+  flex-shrink: 0;
+  gap: 1rem;
+  padding-right: 1rem;
+}
+
+.certificationCard {
+  display: flex;
+  flex: 0 0 230px;
+  width: 230px;
+  height: 120px;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 1.2rem;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.22);
+}
+
+.certificationLogo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+@keyframes certificationMarquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* =========================================
+   5. Massive CTA Block
    ========================================= */
 .ctaSection {
   position: relative;
@@ -505,6 +623,11 @@
   .ctaContent h2 {
     font-size: 3rem;
   }
+
+  .certificationsInner {
+    grid-template-columns: minmax(190px, 230px) minmax(0, 1fr);
+    gap: 1.25rem;
+  }
 }
 
 @media (max-width: 768px) {
@@ -549,6 +672,35 @@
 
   .servicesSection {
     padding: 4rem 1.5rem;
+  }
+
+  .certificationsSection {
+    padding: 0 1.5rem 4rem;
+  }
+
+  .certificationsInner {
+    display: block;
+    padding: 1.75rem 0;
+  }
+
+  .certificationsHeading {
+    margin-bottom: 1.5rem;
+  }
+
+  .certificationsHeading p {
+    max-width: 480px;
+  }
+
+  .certificationsViewport {
+    -webkit-mask-image: linear-gradient(90deg, transparent, #000 4%, #000 96%, transparent);
+    mask-image: linear-gradient(90deg, transparent, #000 4%, #000 96%, transparent);
+  }
+
+  .certificationCard {
+    flex-basis: 210px;
+    width: 210px;
+    height: 112px;
+    padding: 1rem 1.25rem;
   }
 
   .sectionTitle {
@@ -627,6 +779,20 @@
     padding: 3rem 1rem;
   }
 
+  .certificationsSection {
+    padding: 0 1rem 3.25rem;
+  }
+
+  .certificationsHeading {
+    margin-bottom: 1.25rem;
+  }
+
+  .certificationCard {
+    flex-basis: 190px;
+    width: 190px;
+    height: 104px;
+  }
+
   .sectionHeader {
     margin-bottom: 3rem;
   }
@@ -659,5 +825,23 @@
 
   .ctaPhone {
     font-size: 1.3rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .certificationsViewport {
+    overflow-x: auto;
+    -webkit-mask-image: none;
+    mask-image: none;
+    scrollbar-width: thin;
+  }
+
+  .certificationsTrack {
+    animation: none;
+    padding: 0 1.5rem 0.75rem;
+  }
+
+  .certificationsGroup[aria-hidden="true"] {
+    display: none;
   }
 }

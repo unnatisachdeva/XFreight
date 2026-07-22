@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { Mail, MapPin, Phone } from "lucide-react";
 import styles from "./Footer.module.css";
 
 export default function Footer() {
@@ -45,8 +46,28 @@ export default function Footer() {
         <div className={styles.column}>
           <p className={styles.columnHeading}>Contact</p>
           <ul>
+            <li className={styles.contactText}>
+              
+              <span className={styles.contactRow}>
+                <MapPin aria-hidden="true" className={styles.contactIcon} />
+                <span>
+                  #3400 - 10180 101 ST NW
+                  <br />
+                  Edmonton AB T5J3S4
+                </span>
+              </span>
+            </li>
             <li>
-              <a href="mailto:info@xfreight.ca">info@xfreight.ca</a>
+              <a href="tel:+17806055557" className={styles.contactRow}>
+                <Phone aria-hidden="true" className={styles.contactIcon} />
+                <span>780 605 5557</span>
+              </a>
+            </li>
+            <li>
+              <a href="mailto:info@xfreight.ca" className={styles.contactRow}>
+                <Mail aria-hidden="true" className={styles.contactIcon} />
+                <span>info@xfreight.ca</span>
+              </a>
             </li>
           </ul>
         </div>

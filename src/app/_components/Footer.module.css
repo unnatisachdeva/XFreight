@@ -73,6 +73,29 @@
   color: var(--primary);
 }
 
+.contactText {
+  color: var(--text-main);
+  display: flex;
+  flex-direction: column;
+  font-size: 0.95rem;
+  gap: 0.2rem;
+  line-height: 1.5;
+}
+
+.contactRow {
+  align-items: flex-start;
+  display: inline-flex;
+  gap: 0.5rem;
+}
+
+.contactIcon {
+  color: var(--primary);
+  flex: 0 0 auto;
+  height: 1rem;
+  margin-top: 0.2rem;
+  width: 1rem;
+}
+
 .divider {
   border: none;
   height: 1px;

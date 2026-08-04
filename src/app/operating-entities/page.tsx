@@ -5,7 +5,7 @@ import styles from "./page.module.css";
 export const metadata: Metadata = {
   title: "Operating Entities",
   description:
-    "Explore the affiliated companies under the X Freight Group family of brands — X Freight Group Inc., The X Group Inc., X Transport Inc., and Every Way Transport Ltd.",
+    "Explore the affiliated companies under the X Freight Group family of brands — X Freight Group Inc., The X Group Inc., and Every Way Transport Ltd.",
   openGraph: {
     title: "Operating Entities | X Freight Group",
     description: "The affiliated companies under the X Freight Group family of brands.",
@@ -23,6 +23,7 @@ const entities = [
     url: "https://www.xfreight.ca",
     image: "/image.png",
     scale: 3,
+    mcNumber: "MC : 1724667",
   },
   {
     name: "The X Group Inc.",
@@ -30,14 +31,15 @@ const entities = [
     url: "#",
     image: "/logoxgroup.png",
     scale: 3,
+    mcNumber: "MC :1719599",
   },
-  {
-    name: "X Transport Inc.",
-    desc: "X Transport Inc. is our asset-based, long-haul trucking division, specializing in cross-border and domestic Canada open-deck freight. From standard flatbed shipments to specialized and oversized loads, we move a wide range of freight with experienced drivers and well-maintained equipment. Our focus is simple—safe transport, reliable scheduling, and the ability to handle complex shipments with confidence..",
-    url: "https://www.xtransport.ca",
-    image: "/logoXTransport.png",
-    scale: 0.7,
-  },
+  // {
+  //   name: "X Transport Inc.",
+  //   desc: "X Transport Inc. is our asset-based, long-haul trucking division, specializing in cross-border and domestic Canada open-deck freight. From standard flatbed shipments to specialized and oversized loads, we move a wide range of freight with experienced drivers and well-maintained equipment. Our focus is simple—safe transport, reliable scheduling, and the ability to handle complex shipments with confidence..",
+  //   url: "https://www.xtransport.ca",
+  //   image: "/logoXTransport.png",
+  //   scale: 0.7,
+  // },
   {
     name: "Every Way Transport Ltd.",
     desc: "Every Way Transport Ltd. operates our end-dump fleet, providing bulk hauling solutions for infrastructure and construction projects across Western Canada. We support high-volume movement of aggregate, soil, and other materials with dependable equipment and efficient turnaround times. Built for production environments, our team delivers consistent performance to keep projects on schedule.",
@@ -97,6 +99,9 @@ export default function OperatingEntitiesPage() {
                 />
               </div>
               <h2 className={styles.entityName}>{entity.name}</h2>
+              {"mcNumber" in entity && entity.mcNumber ? (
+                <p className={styles.entityMeta}>{entity.mcNumber}</p>
+              ) : null}
               <p className={styles.entityDesc}>{entity.desc}</p>
               <div className={styles.visitCta}>
                 <span className={styles.visitText}>Visit Website</span>

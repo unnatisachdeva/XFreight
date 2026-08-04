@@ -44,6 +44,14 @@
   max-width: 280px;
 }
 
+.brandMeta {
+  color: var(--text-main);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+}
+
 .column h4,
 .columnHeading {
   font-size: 0.85rem;

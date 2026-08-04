@@ -18,6 +18,7 @@ export default function Footer() {
             Asset-backed Western-Canadian logistics. Full-service transportation
             to keep your supply chain moving.
           </p>
+          <p className={styles.brandMeta}>MC : 1724667</p>
         </div>
 
         {/* Navigation */}

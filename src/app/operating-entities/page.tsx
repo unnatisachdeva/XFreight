@@ -27,8 +27,8 @@ const entities = [
   },
   {
     name: "The X Group Inc.",
-    desc: "X Group Inc. is an asset-based business unit, focused on supporting the oilfield, mining and energy sectors. With our own trucks and an owner-operator fleet, we have access to the capacity our clients need for fracking projects, equipment moves, and bulk hauling. As we continue to expand our presence, we are actively working toward ISN and COR certifications to meet the highest industry safety and compliance standards..",
-    url: "#",
+    desc: "X Group Inc. is our asset-based trucking fleet. We serve the heavy-haul, oil & gas, and long-haul OTR open-deck trucking markets. With flatbed, stepdeck and RGN equipment on the highway along with hoppers in Alberta, we move a wide range of freight. From standard flatbed to oversize projects, to frac sand and ice roads – we are an experienced and reliable provider. Safety is of highest importance and this reflects in how we are developing our team and our policies. Our COR audit is currently scheduled and we are striving to meet the highest standards of training, safety and compliance. Our focus is simple – safe transport, reliable scheduling, and the ability to handle your most complex project with confidence.",
+    url: "https://www.thexgroup.ca/",
     image: "/logoxgroup.png",
     scale: 3,
     mcNumber: "MC :1719599",
